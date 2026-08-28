@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>امتحانات الأستاذ عامر الجرابعة</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- ============ HEADER (persists on every screen) ============ -->
+    <header class="site-header">
+      <img class="logo" src="assets/logo.png" alt="شعار امتحانات الأستاذ عامر الجرابعة">
+    </header>
+
+    <main class="app-main">
+
+      <!-- ============ SCREEN 1 — MAIN / STUDENT INFO ============ -->
+      <section id="screen-main" class="screen active">
+        <div class="card intro-card">
+          <h1 class="page-title">امتحانات الأستاذ عامر الجرابعة</h1>
+          <p class="page-subtitle">تحدَّ نفسك، اختبر قدراتك، وعبِّ رصيدك من المعرفة</p>
+        </div>
+
+        <form id="student-form" class="card form-card" novalidate>
+          <div class="field-group">
+            <label for="input-name">اسم الطالب</label>
+            <input type="text" id="input-name" name="name" placeholder="اكتب اسمك" autocomplete="name" required>
+            <p class="error-msg" id="error-name"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="input-phone">رقم الهاتف</label>
+            <input type="tel" id="input-phone" name="phone" placeholder="07XXXXXXXX" inputmode="numeric" maxlength="10" required>
+            <p class="error-msg" id="error-phone"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="input-generation">اختر الجيل</label>
+            <select id="input-generation" name="generation" required>
+              <option value="" disabled selected>اختر الجيل</option>
+              <option value="جيل 2010">جيل 2010</option>
+              <option value="جيل 2009">جيل 2009</option>
+            </select>
+            <p class="error-msg" id="error-generation"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btn-continue">
+            <span class="btn-label">متابعة</span>
+            <span class="btn-spinner" hidden></span>
+          </button>
+          <p class="error-msg" id="error-form"></p>
+        </form>
+      </section>
+
+      <!-- ============ SCREEN 2010 — SEMESTER SELECTION ============ -->
+      <section id="screen-2010" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">امتحانات الرياضيات — جيل 2010</h1>
+          <p class="page-subtitle">الأستاذ عامر الجرابعة</p>
+        </div>
+
+        <div class="choice-grid" id="grid-2010-semesters"></div>
+        <div id="bag-2010-slot"></div>
+
+        <button class="btn btn-ghost btn-block back-btn" data-back="screen-main">→ رجوع</button>
+      </section>
+
+      <!-- ============ SCREEN 2010 — SEMESTER 1 (3 units) ============ -->
+      <section id="screen-2010-s1" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">الفصل الدراسي الأول</h1>
+          <p class="page-subtitle">جيل 2010 — الرياضيات</p>
+        </div>
+        <div class="units-grid" id="units-2010-s1"></div>
+        <button class="btn btn-ghost btn-block back-btn" data-back="screen-2010">→ رجوع</button>
+      </section>
+
+      <!-- ============ SCREEN 2010 — SEMESTER 2 (3 units) ============ -->
+      <section id="screen-2010-s2" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">الفصل الدراسي الثاني</h1>
+          <p class="page-subtitle">جيل 2010 — الرياضيات</p>
+        </div>
+        <div class="units-grid" id="units-2010-s2"></div>
+        <button class="btn btn-ghost btn-block back-btn" data-back="screen-2010">→ رجوع</button>
+      </section>
+
+      <!-- ============ SCREEN 2009 — FIELD SELECTION ============ -->
+      <section id="screen-2009" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">امتحانات الرياضيات والمواد المرتبطة — جيل 2009</h1>
+          <p class="page-subtitle">الأستاذ عامر الجرابعة</p>
+        </div>
+
+        <div class="choice-grid" id="grid-2009-fields"></div>
+
+        <button class="btn btn-ghost btn-block back-btn" data-back="screen-main">→ رجوع</button>
+      </section>
+
+      <!-- ============ SCREEN 2009 — BUSINESS FIELD ============ -->
+      <section id="screen-2009-business" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">حقل الأعمال</h1>
+          <p class="page-subtitle">جيل 2009</p>
+        </div>
+
+        <div class="subject-block">
+          <h2 class="subject-title">رياضيات الأعمال</h2>
+          <div class="units-grid" id="units-2009-business-math"></div>
+        </div>
+
+        <div class="subject-block">
+          <h2 class="subject-title">الثقافة المالية</h2>
+          <div class="units-grid" id="units-2009-business-finlit"></div>
+        </div>
+
+        <div id="bag-2009-business-slot"></div>
+
+        <button class="btn btn-ghost btn-block back-btn" data-back="screen-2009">→ رجوع</button>
+      </section>
+
+      <!-- ============ SCREEN 2009 — LANGUAGES & HUMANITIES FIELD ============ -->
+      <section id="screen-2009-languages" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">حقل اللغات والعلوم الإنسانية</h1>
+          <p class="page-subtitle">جيل 2009</p>
+        </div>
+
+        <div class="subject-block">
+          <h2 class="subject-title">الثقافة المالية</h2>
+          <div class="units-grid" id="units-2009-languages-finlit"></div>
+        </div>
+
+        <div id="bag-2009-languages-slot"></div>
+
+        <button class="btn btn-ghost btn-block back-btn" data-back="screen-2009">→ رجوع</button>
+      </section>
+
+    </main>
+
+    <!-- ============ FOOTER (persists on every screen) ============ -->
+    <footer class="site-footer">
+      <p class="footer-title">امتحانات الأستاذ عامر الجرابعة</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/amer.jarabaa/?hl=ar" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-copy">جميع الحقوق محفوظة</p>
+    </footer>
+
+  </div>
+
+  <!-- Exam file preview / placeholder modal -->
+  <div class="modal-overlay" id="exam-modal-overlay" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button class="modal-close" id="exam-modal-close" aria-label="إغلاق">×</button>
+      <h3 id="exam-modal-title"></h3>
+      <p id="exam-modal-body"></p>
+      <a id="exam-modal-link" class="btn btn-primary" target="_blank" rel="noopener" hidden>فتح الامتحان</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
