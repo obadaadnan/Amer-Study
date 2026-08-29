@@ -67,6 +67,43 @@ body { direction: rtl; }
   display: block;
 }
 
+/* ============ GREETING BAR (shown once logged in) ============ */
+.greeting-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.greeting-bar[hidden] { display: none; }
+.logout-link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ============ PHONE DISPLAY (readonly, on registration screen) ============ */
+.phone-display {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  border: 1.5px solid var(--border-soft);
+  font-weight: 700;
+  color: var(--text-main);
+  direction: ltr;
+  text-align: right;
+  letter-spacing: 0.5px;
+}
+
 /* ============ MAIN / SCREENS ============ */
 .app-main {
   flex: 1;
@@ -403,6 +440,19 @@ body { direction: rtl; }
   margin: 0;
   font-weight: 500;
 }
+
+/* Pending / not-yet-added link — same shape as the bag/WhatsApp card,
+   but visually muted and non-clickable until a real URL is configured. */
+.bag-card.pending {
+  background: var(--bg-soft);
+  color: var(--text-muted);
+  cursor: default;
+  box-shadow: none;
+  border: 1.5px dashed var(--border-soft);
+}
+.bag-card.pending:hover { transform: none; box-shadow: none; }
+.bag-card.pending .bag-icon { animation: none; opacity: 0.6; }
+.bag-card.pending .bag-text .bag-title { color: var(--text-main); }
 
 /* ============ FOOTER ============ */
 .site-footer {
