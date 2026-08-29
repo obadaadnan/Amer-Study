@@ -451,6 +451,9 @@ body { direction: rtl; }
   padding: 20px;
   z-index: 100;
 }
+.modal-overlay[hidden] {
+  display: none;
+}
 .modal-card {
   background: #fff;
   border-radius: var(--radius-lg);
