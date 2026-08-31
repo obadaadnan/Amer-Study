@@ -1,5 +1,5 @@
 /* =========================================================================
-   امتحانات الأستاذ عامر الجرابعة — Frontend logic (GitHub Pages)
+   امتحانات الأستاذ عامر الجرابعة -Frontend logic (GitHub Pages)
    -------------------------------------------------------------------------
    Set this to your Apps Script Web App URL after deploying Code.gs:
    https://script.google.com/macros/s/XXXXXXXXXXXXXXXXXXXX/exec
@@ -7,9 +7,9 @@
 const API_URL = 'https://script.google.com/macros/s/AKfycbw3AbxFh1LKYPfVNGUnUSG749K00X0DQFWwCFj1wiidbKFBr4XLl-BP7QLH4aiJWfNE/exec';
 
 /* =====================================================================
-   CONFIG — every editable link lives here. Change a value, commit, push.
+   CONFIG -every editable link lives here. Change a value, commit, push.
    Leave a value as '' to show a graceful "coming soon" state instead of
-   a broken link — never invent a URL.
+   a broken link -never invent a URL.
    ===================================================================== */
 const CONFIG = {
   FINANCIAL_CULTURE_WHATSAPP: 'https://chat.whatsapp.com/HQM03wFeoR25264UPONzcz?s=cl&p=a&mlu=4',
@@ -28,10 +28,10 @@ const SESSION_KEY = 'amer_exams_session';
    One consistent naming style across the whole project:
      unit title   -> "الوحدة (N) <title>"
      lesson item  -> "الدرس (N): <title>"
-   Every item is ready to receive a `url` later — leave '' until you have
+   Every item is ready to receive a `url` later -leave '' until you have
    the real file/link, students then see a graceful "coming soon" message.
    An item with { type: 'exam', examId: '...' } opens the interactive
-   exam engine instead of a plain link — see exam-data.js / EXAM_REGISTRY.
+   exam engine instead of a plain link -see exam-data.js / EXAM_REGISTRY.
    ===================================================================== */
 const UNITS_DATA = {
 
@@ -70,7 +70,7 @@ const UNITS_DATA = {
     }
   ],
 
-  // No content provided yet for semester 2 — placeholder units, ready to fill in later.
+  // No content provided yet for semester 2 -placeholder units, ready to fill in later.
   '2010-math-s2': [
     { title: 'الوحدة (1)', items: [] },
     { title: 'الوحدة (2)', items: [] },
@@ -147,7 +147,7 @@ const UNITS_DATA = {
   ]
 };
 
-/* ============ SESSION (localStorage is convenience only — Sheets is the source of truth) ============ */
+/* ============ SESSION (localStorage is convenience only -Sheets is the source of truth) ============ */
 let currentStudent = null; // { row, name, phone, generation, field }
 
 function saveSession(student) {
@@ -227,7 +227,7 @@ function renderUnits(containerId, dataKey) {
     if (!unit.items || unit.items.length === 0) {
       const empty = document.createElement('div');
       empty.className = 'exam-empty';
-      empty.textContent = 'لا توجد دروس مضافة بعد — سيتم إضافتها قريبًا';
+      empty.textContent = 'لا توجد دروس مضافة بعد -سيتم إضافتها قريبًا';
       list.appendChild(empty);
     } else {
       unit.items.forEach(function (item) {
@@ -305,7 +305,7 @@ function openExamModelChoice(examId) {
   if (!exam) return;
 
   document.getElementById('exam-model-title').textContent = exam.examName;
-  document.getElementById('exam-model-subtitle').textContent = exam.subject + ' — ' + exam.unit;
+  document.getElementById('exam-model-subtitle').textContent = exam.subject + ' -' + exam.unit;
 
   const grid = document.getElementById('grid-exam-models');
   grid.innerHTML = '';
@@ -340,7 +340,7 @@ function startExam(examId, modelName) {
   };
 
   document.getElementById('exam-taking-title').textContent = exam.examName;
-  document.getElementById('exam-taking-subtitle').textContent = exam.subject + ' — ' + modelName;
+  document.getElementById('exam-taking-subtitle').textContent = exam.subject + ' -' + modelName;
   document.getElementById('exam-taking-back-btn').onclick = function () { showScreen('screen-exam-model'); };
 
   renderExamQuestions();
@@ -353,7 +353,7 @@ function renderExamQuestions() {
 
   const progress = document.createElement('p');
   progress.className = 'exam-progress';
-  progress.textContent = examState.questions.length + ' سؤال — اختر إجابة كل سؤال ثم اضغط "إنهاء الامتحان"';
+  progress.textContent = examState.questions.length + ' سؤال -اختر إجابة كل سؤال ثم اضغط "إنهاء الامتحان"';
   list.appendChild(progress);
 
   examState.questions.forEach(function (q, index) {
@@ -463,7 +463,7 @@ function motivationFor(percentage) {
 function renderExamResult() {
   const r = examState.result;
   document.getElementById('exam-result-subtitle').textContent =
-    examState.exam.examName + ' — ' + examState.modelName;
+    examState.exam.examName + ' -' + examState.modelName;
   document.getElementById('exam-score-percentage').textContent = r.percentage + '%';
   document.getElementById('exam-stat-score').textContent = r.scoreText;
   document.getElementById('exam-stat-correct').textContent = r.correct;
@@ -541,7 +541,7 @@ function buildSections() {
   renderUnits('units-2010-s1', '2010-math');
   renderUnits('units-2010-s2', '2010-math-s2');
 
-  // ---- 2009 — حقل الأعمال (hub: choose subject) ----
+  // ---- 2009 -حقل الأعمال (hub: choose subject) ----
   const gridBusinessSubjects = document.getElementById('grid-2009-business-subjects');
   renderChoiceCard(gridBusinessSubjects, '📐 رياضيات الأعمال', '١', function () {
     showScreen('screen-2009-business-math');
@@ -553,7 +553,7 @@ function buildSections() {
   });
   renderActionCard(
     'bag-business-slot', '🎒',
-    'الحقيبة الإلكترونية — حقل الأعمال', 'كل ما تحتاجه في مكان واحد',
+    'الحقيبة الإلكترونية -حقل الأعمال', 'كل ما تحتاجه في مكان واحد',
     CONFIG.BUSINESS_BAG
   );
 
@@ -572,11 +572,11 @@ function buildSections() {
   );
   renderActionCard(
     'bag-finlit-business-slot', '🎒',
-    'الحقيبة الإلكترونية — الثقافة المالية', 'كل ما تحتاجه في مكان واحد',
+    'الحقيبة الإلكترونية -الثقافة المالية', 'كل ما تحتاجه في مكان واحد',
     CONFIG.FINANCIAL_CULTURE_BAG
   );
 
-  // ---- 2009 — حقل اللغات والعلوم الإنسانية ----
+  // ---- 2009 -حقل اللغات والعلوم الإنسانية ----
   renderUnits('units-2009-languages-finlit', '2009-financial-culture');
   renderActionCard(
     'whatsapp-finlit-languages-slot', '💬',
