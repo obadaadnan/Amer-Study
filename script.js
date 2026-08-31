@@ -4,7 +4,7 @@
    Set this to your Apps Script Web App URL after deploying Code.gs:
    https://script.google.com/macros/s/XXXXXXXXXXXXXXXXXXXX/exec
    ========================================================================= */
-const API_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+const API_URL = 'https://script.google.com/macros/s/AKfycbw3AbxFh1LKYPfVNGUnUSG749K00X0DQFWwCFj1wiidbKFBr4XLl-BP7QLH4aiJWfNE/exec';
 
 /* =====================================================================
    CONFIG — every editable link lives here. Change a value, commit, push.
