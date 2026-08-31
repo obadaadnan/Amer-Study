@@ -6,6 +6,9 @@
   <title>امتحانات الأستاذ عامر الجرابعة</title>
   <link rel="icon" href="assets/logo.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </head>
 <body>
 
@@ -134,27 +137,43 @@
         <button class="btn btn-ghost btn-block back-btn" data-back="screen-2010">→ رجوع</button>
       </section>
 
-      <!-- ============ SCREEN 2009 — BUSINESS FIELD (dedicated page) ============ -->
+      <!-- ============ SCREEN 2009 — BUSINESS FIELD HUB (choose subject) ============ -->
       <section id="screen-2009-business" class="screen">
         <div class="card intro-card">
           <h1 class="page-title">حقل الأعمال — جيل 2009</h1>
           <p class="page-subtitle">الأستاذ عامر الجرابعة</p>
         </div>
 
-        <div class="subject-block">
-          <h2 class="subject-title">📐 رياضيات الأعمال</h2>
-          <div class="units-grid" id="units-2009-business-math"></div>
-          <div id="whatsapp-business-math-slot"></div>
-        </div>
+        <div class="choice-grid" id="grid-2009-business-subjects"></div>
 
-        <div class="subject-block">
-          <h2 class="subject-title">📘 الثقافة المالية</h2>
-          <div class="units-grid" id="units-2009-business-finlit"></div>
-          <div id="whatsapp-finlit-business-slot"></div>
-        </div>
-
-        <div id="bag-finlit-business-slot"></div>
         <div id="bag-business-slot"></div>
+      </section>
+
+      <!-- ============ SCREEN 2009 — BUSINESS MATHEMATICS (dedicated page) ============ -->
+      <section id="screen-2009-business-math" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">📐 رياضيات الأعمال</h1>
+          <p class="page-subtitle">حقل الأعمال — جيل 2009</p>
+        </div>
+
+        <div class="units-grid" id="units-2009-business-math"></div>
+        <div id="whatsapp-business-math-slot"></div>
+
+        <button class="btn btn-ghost btn-block back-btn" data-back="screen-2009-business">→ رجوع</button>
+      </section>
+
+      <!-- ============ SCREEN 2009 — FINANCIAL CULTURE (business field, dedicated page) ============ -->
+      <section id="screen-2009-business-finlit" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">📘 الثقافة المالية</h1>
+          <p class="page-subtitle">حقل الأعمال — جيل 2009</p>
+        </div>
+
+        <div class="units-grid" id="units-2009-business-finlit"></div>
+        <div id="whatsapp-finlit-business-slot"></div>
+        <div id="bag-finlit-business-slot"></div>
+
+        <button class="btn btn-ghost btn-block back-btn" data-back="screen-2009-business">→ رجوع</button>
       </section>
 
       <!-- ============ SCREEN 2009 — LANGUAGES & HUMANITIES FIELD (dedicated page) ============ -->
@@ -171,6 +190,63 @@
         </div>
 
         <div id="bag-finlit-languages-slot"></div>
+      </section>
+
+      <!-- ============ EXAM — MODEL CHOICE ============ -->
+      <section id="screen-exam-model" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title" id="exam-model-title"></h1>
+          <p class="page-subtitle" id="exam-model-subtitle"></p>
+        </div>
+        <div class="choice-grid" id="grid-exam-models"></div>
+        <button class="btn btn-ghost btn-block back-btn" id="exam-model-back-btn">→ رجوع</button>
+      </section>
+
+      <!-- ============ EXAM — TAKING ============ -->
+      <section id="screen-exam-taking" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title" id="exam-taking-title"></h1>
+          <p class="page-subtitle" id="exam-taking-subtitle"></p>
+        </div>
+        <div id="exam-questions-list"></div>
+        <button type="button" class="btn btn-primary btn-block" id="exam-finish-btn">إنهاء الامتحان</button>
+        <button class="btn btn-ghost btn-block back-btn" id="exam-taking-back-btn">→ رجوع</button>
+      </section>
+
+      <!-- ============ EXAM — RESULT ============ -->
+      <section id="screen-exam-result" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">نتيجتك</h1>
+          <p class="page-subtitle" id="exam-result-subtitle"></p>
+        </div>
+
+        <div class="card exam-result-card">
+          <div class="exam-score-circle" id="exam-score-circle">
+            <span id="exam-score-percentage"></span>
+          </div>
+          <div class="exam-result-stats">
+            <div class="exam-stat">
+              <span class="exam-stat-label">الدرجة</span>
+              <span class="exam-stat-value" id="exam-stat-score"></span>
+            </div>
+            <div class="exam-stat correct">
+              <span class="exam-stat-label">إجابات صحيحة</span>
+              <span class="exam-stat-value" id="exam-stat-correct"></span>
+            </div>
+            <div class="exam-stat wrong">
+              <span class="exam-stat-label">إجابات خاطئة</span>
+              <span class="exam-stat-value" id="exam-stat-wrong"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card exam-motivation-card" id="exam-motivation-card"></div>
+
+        <p class="error-msg" id="exam-save-error" hidden></p>
+        <button type="button" class="btn btn-primary btn-block" id="exam-retry-save-btn" hidden>إعادة محاولة الحفظ</button>
+
+        <button type="button" class="btn btn-primary btn-block" id="exam-retry-btn">إعادة المحاولة</button>
+        <button class="btn btn-ghost btn-block back-btn" id="exam-result-back-btn">→ رجوع للوحدة</button>
       </section>
 
     </main>
@@ -202,6 +278,7 @@
     </div>
   </div>
 
+  <script src="exam-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
