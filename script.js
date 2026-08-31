@@ -545,15 +545,15 @@ function buildSections() {
   const gridBusinessSubjects = document.getElementById('grid-2009-business-subjects');
   renderChoiceCard(gridBusinessSubjects, '📐 رياضيات الأعمال', '١', function () {
     showScreen('screen-2009-business-math');
-    logAccess('2009 حقل الأعمال - رياضيات الأعمال');
+    logAccess('2009 حقل الأعمال رياضيات الأعمال');
   });
   renderChoiceCard(gridBusinessSubjects, '📘 الثقافة المالية', '٢', function () {
     showScreen('screen-2009-business-finlit');
-    logAccess('2009 حقل الأعمال - الثقافة المالية');
+    logAccess('2009 حقل الأعمال الثقافة المالية');
   });
   renderActionCard(
     'bag-business-slot', '🎒',
-    'الحقيبة الإلكترونية -حقل الأعمال', 'كل ما تحتاجه في مكان واحد',
+    'الحقيبة الإلكترونية حقل الأعمال', 'كل ما تحتاجه في مكان واحد',
     CONFIG.BUSINESS_BAG
   );
 
