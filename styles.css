@@ -580,12 +580,9 @@ body { direction: rtl; }
   padding-top: 3px;
 }
 .exam-choices {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
-}
-@media (max-width: 420px) {
-  .exam-choices { grid-template-columns: 1fr; }
 }
 .exam-choice-btn {
   display: flex;
@@ -623,6 +620,16 @@ body { direction: rtl; }
   flex-shrink: 0;
 }
 .exam-choice-btn.selected .exam-choice-letter { background: rgba(255,255,255,0.3); }
+
+/* Root-level fix for Arabic/math bidi mixing: every KaTeX-rendered
+   expression is force-isolated as its own left-to-right block, so
+   minus signs, parentheses, matrices, and variable order can never be
+   reordered by the surrounding RTL page — regardless of where the
+   expression sits inside Arabic text. */
+.katex {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
 
 .exam-progress {
   font-size: 13px;
