@@ -693,3 +693,50 @@ body { direction: rtl; }
   background: var(--bg-soft);
   border: none;
 }
+
+/* ============ FULL-MARK CELEBRATION ============ */
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 200;
+}
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  opacity: 0.9;
+  animation-name: confettiFall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+.confetti-piece.round { border-radius: 50%; }
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(105vh) translateX(var(--drift, 0px)) rotate(320deg);
+    opacity: 0;
+  }
+}
+
+.exam-motivation-card.full-mark {
+  background: var(--gradient-brand);
+  color: #fff;
+}
+.exam-motivation-card.full-mark .full-mark-badge {
+  display: inline-block;
+  font-size: 26px;
+  margin-bottom: 6px;
+  animation: fullMarkPop 0.5s ease;
+}
+@keyframes fullMarkPop {
+  0% { transform: scale(0.4); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); }
+}
