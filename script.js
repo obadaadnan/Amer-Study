@@ -460,6 +460,36 @@ function motivationFor(percentage) {
   return { emoji: '📚', text: 'لا تستسلم!<br>هذه فرصة ممتازة تعرف فيها نقاط ضعفك وتراجعها قبل الامتحان القادم.' };
 }
 
+/* ============ FULL-MARK CELEBRATION ============
+   Applies automatically to every exam, present and future — the only
+   condition is correct === total (dynamic, never a hardcoded score). */
+function isFullMark(r) {
+  return r.total > 0 && r.correct === r.total;
+}
+
+function launchConfetti() {
+  const layer = document.getElementById('confetti-layer');
+  if (!layer) return;
+  layer.innerHTML = '';
+
+  const colors = ['#5B3FCF', '#7C5CFC', '#3B7DE0', '#6FA8F5', '#4A2E9E'];
+  const pieceCount = 36; // light and quick — not a large/annoying burst
+
+  for (let i = 0; i < pieceCount; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece' + (i % 3 === 0 ? ' round' : '');
+    piece.style.left = Math.random() * 100 + 'vw';
+    piece.style.background = colors[i % colors.length];
+    piece.style.setProperty('--drift', (Math.random() * 80 - 40) + 'px');
+    piece.style.animationDuration = (1.6 + Math.random() * 1.2) + 's';
+    piece.style.animationDelay = (Math.random() * 0.4) + 's';
+    layer.appendChild(piece);
+  }
+
+  // Clean up after the animation finishes so it never lingers or blocks anything.
+  setTimeout(function () { layer.innerHTML = ''; }, 3200);
+}
+
 function renderExamResult() {
   const r = examState.result;
   document.getElementById('exam-result-subtitle').textContent =
@@ -470,8 +500,21 @@ function renderExamResult() {
   document.getElementById('exam-stat-wrong').textContent = r.wrong;
 
   const m = motivationFor(r.percentage);
-  document.getElementById('exam-motivation-card').innerHTML =
-    '<span style="font-size:26px;display:block;margin-bottom:8px;">' + m.emoji + '</span>' + m.text;
+  const motivationCard = document.getElementById('exam-motivation-card');
+  const fullMark = isFullMark(r);
+
+  motivationCard.classList.toggle('full-mark', fullMark);
+
+  if (fullMark) {
+    motivationCard.innerHTML =
+      '<span class="full-mark-badge">🎉</span><br>' +
+      'مبروك! علامة كاملة!<br>' +
+      'أبدعت! استمر بهذا المستوى الرائع 🔥';
+    launchConfetti();
+  } else {
+    motivationCard.innerHTML =
+      '<span style="font-size:26px;display:block;margin-bottom:8px;">' + m.emoji + '</span>' + m.text;
+  }
 
   document.getElementById('exam-save-error').hidden = true;
   document.getElementById('exam-retry-save-btn').hidden = true;
