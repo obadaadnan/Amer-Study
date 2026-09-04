@@ -115,7 +115,7 @@ const UNITS_DATA = {
     {
       title: 'الوحدة (1) الدورة المحاسبية في المؤسسات الخدمية',
       items: [
-        { title: 'الدرس (1): الدورة المحاسبية: المفهوم، والمراحل', url: '' },
+        { title: 'الدرس (1): الدورة المحاسبية: المفهوم، والمراحل', type: 'exam', examId: 'fin-culture-l1' },
         { title: 'الدرس (2): نظرية القيد المزدوج والعمليات المالية', url: '' },
         { title: 'الدرس (3): تسجيل القيود المحاسبية', url: '' },
         { title: 'الدرس (4): دفتر اليومية', url: '' },
@@ -347,9 +347,19 @@ function startExam(examId, modelName) {
   showScreen('screen-exam-taking');
 }
 
+// Every exam can optionally define its own visible choice labels (e.g. the
+// Arabic أ/ب/ج/د used in some worksheets) via `labels` in EXAM_REGISTRY.
+// Exams that don't define it (like the original Business Mathematics exam)
+// keep the default Latin a/b/c/d display — nothing changes for them.
+const DEFAULT_CHOICE_LABELS = { a: 'a', b: 'b', c: 'c', d: 'd' };
+function choiceLabel(exam, letter) {
+  return (exam.labels && exam.labels[letter]) || DEFAULT_CHOICE_LABELS[letter];
+}
+
 function renderExamQuestions() {
   const list = document.getElementById('exam-questions-list');
   list.innerHTML = '';
+  const exam = examState.exam;
 
   const progress = document.createElement('p');
   progress.className = 'exam-progress';
@@ -380,7 +390,7 @@ function renderExamQuestions() {
       btn.dataset.question = q.id;
       btn.dataset.letter = letter;
       btn.innerHTML =
-        '<span class="exam-choice-letter">' + letter + '</span>' +
+        '<span class="exam-choice-letter">' + choiceLabel(exam, letter) + '</span>' +
         '<span>' + choiceText + '</span>';
 
       btn.addEventListener('click', function () {
@@ -524,6 +534,85 @@ function renderExamResult() {
   };
   document.getElementById('exam-result-back-btn').onclick = function () {
     showScreen(examState.backScreen);
+  };
+  document.getElementById('exam-review-btn').onclick = function () {
+    renderExamReview();
+    showScreen('screen-exam-review');
+  };
+}
+
+/* ============ REVIEW ANSWERS (generic — works for every exam) ============
+   Reads directly from examState.result.answerRecords (the exact records
+   already used for grading and for the Sheets save) and examState.exam's
+   stored answer key — nothing here is recalculated or guessed. */
+function renderExamReview() {
+  const exam = examState.exam;
+  const r = examState.result;
+
+  document.getElementById('exam-review-subtitle').textContent = exam.examName + '، ' + examState.modelName;
+
+  const list = document.getElementById('exam-review-list');
+  list.innerHTML = '';
+
+  examState.questions.forEach(function (q, index) {
+    const record = r.answerRecords.find(function (rec) { return rec.q === q.id; });
+    const studentLetter = record ? record.s : '';
+    const correctLetter = exam.answerKey[q.id];
+    const isCorrect = !!(record && record.ok);
+
+    const card = document.createElement('div');
+    card.className = 'exam-question-card review-question-card';
+
+    const header = document.createElement('div');
+    header.className = 'exam-question-header';
+    header.innerHTML =
+      '<div class="exam-question-number">' + (index + 1) + '</div>' +
+      '<p class="exam-question-text">' + q.text + '</p>';
+    card.appendChild(header);
+
+    const status = document.createElement('div');
+    status.className = 'review-status ' + (isCorrect ? 'correct' : 'incorrect');
+    status.textContent = isCorrect ? '✓ إجابتك صحيحة' : '✗ إجابتك غير صحيحة';
+    card.appendChild(status);
+
+    const choicesWrap = document.createElement('div');
+    choicesWrap.className = 'exam-choices';
+
+    ['a', 'b', 'c', 'd'].forEach(function (letter) {
+      const choiceText = q.choices[letter];
+      if (choiceText === undefined) return;
+
+      const row = document.createElement('div');
+      row.className = 'review-choice-row';
+      if (letter === correctLetter) row.classList.add('review-correct');
+      if (letter === studentLetter && letter !== correctLetter) row.classList.add('review-wrong');
+
+      let tag = '';
+      if (letter === correctLetter) tag = '<span class="review-tag">الإجابة الصحيحة</span>';
+      else if (letter === studentLetter) tag = '<span class="review-tag">إجابتك</span>';
+
+      row.innerHTML =
+        '<span class="exam-choice-letter">' + choiceLabel(exam, letter) + '</span>' +
+        '<span class="review-choice-text">' + choiceText + tag + '</span>';
+      choicesWrap.appendChild(row);
+    });
+
+    card.appendChild(choicesWrap);
+
+    if (!studentLetter) {
+      const note = document.createElement('p');
+      note.className = 'review-unanswered-note';
+      note.textContent = 'لم تتم الإجابة على هذا السؤال';
+      card.appendChild(note);
+    }
+
+    list.appendChild(card);
+  });
+
+  renderMathIn(list);
+
+  document.getElementById('exam-review-back-btn').onclick = function () {
+    showScreen('screen-exam-result');
   };
 }
 
