@@ -694,6 +694,55 @@ body { direction: rtl; }
   border: none;
 }
 
+/* ============ EXAM — REVIEW ANSWERS ============ */
+.review-status {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 13.5px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.review-status.correct { background: rgba(47, 163, 107, 0.12); color: var(--success); }
+.review-status.incorrect { background: rgba(213, 69, 91, 0.12); color: var(--danger); }
+
+.review-choice-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-soft);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.review-choice-row.review-correct {
+  background: rgba(47, 163, 107, 0.12);
+  border-color: var(--success);
+}
+.review-choice-row.review-wrong {
+  background: rgba(213, 69, 91, 0.12);
+  border-color: var(--danger);
+}
+.review-choice-text { flex: 1; }
+.review-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.06);
+  opacity: 0.85;
+}
+.review-unanswered-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 10px 0 0;
+}
+
 /* ============ FULL-MARK CELEBRATION ============ */
 .confetti-layer {
   position: fixed;
