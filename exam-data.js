@@ -186,6 +186,101 @@ const EXAM_ANSWER_KEY_BUSINESS_MATH_L1 = {
   31: 'b'
 };
 
+/* =========================================================================
+   بنك أسئلة اختبار الدرس الأول: الدورة المحاسبية: المفهوم، والمراحل
+   الثقافة المالية — جيل 2009
+   -------------------------------------------------------------------------
+   Transcribed exactly from the uploaded worksheet image — wording, order,
+   choice order, and the answer key are unchanged. Choices in the original
+   are labeled with Arabic letters (أ ب ج د), preserved via the exam's
+   `labels` config in EXAM_REGISTRY below rather than being changed to
+   Latin letters. Pure Arabic text (no math notation), so no KaTeX needed.
+   ========================================================================= */
+const EXAM_QUESTIONS_FIN_CULTURE_L1 = [
+  {
+    id: 1,
+    text: 'تُعد الأساس الذي يُبنى عليه فهم الأنشطة المالية والأداء الاقتصادي للمؤسسات:',
+    choices: { a: 'البيانات المحاسبية', b: 'الاستدامة المالية', c: 'الدورة المحاسبية', d: 'العمليات الماليّة' }
+  },
+  {
+    id: 2,
+    text: 'تشير العبارة الآتية "الوفاء بالمتطلبات القانونية والضريبية عن طريق تقديم تقارير مالية" على أهمية:',
+    choices: { a: 'البيانات المحاسبية', b: 'الدورة المحاسبية', c: 'الاستدامة المالية', d: 'العمليات الماليّة' }
+  },
+  {
+    id: 3,
+    text: 'إحدى الآتية تُعد من أهمية الدورة المحاسبية:',
+    choices: {
+      a: 'تنظيم المعاملات المالية والمستندات',
+      b: 'تسجيل العمليات المالية في دفتر اليومية',
+      c: 'ترحيل القيود إلى دفتر الأستاذ وترصيدها',
+      d: 'تحديد العمليات المالية وتحليلها'
+    }
+  },
+  {
+    id: 4,
+    text: 'تُقدّم صورة واضحة وشاملة عن أداء المؤسسة المالي:',
+    choices: { a: 'العمليات المالية', b: 'الاستدامة', c: 'المعلومات المحاسبية', d: 'دفتر اليومية' }
+  },
+  {
+    id: 5,
+    text: 'الجهة المستفيدة من المعلومة المحاسبية الآتية: "قدرة الشركة على الوفاء بالتزاماتها المالية" هي:',
+    choices: { a: 'المُقرِضون', b: 'العملاء', c: 'الحكومة', d: 'مجلس الإدارة' }
+  },
+  {
+    id: 6,
+    text: 'يُعد الخطوة الأولى لتسجيل العمليات المالية:',
+    choices: {
+      a: 'تحديد العمليات المالية وتحليلها',
+      b: 'ترحيل القيود إلى دفتر الأستاذ',
+      c: 'إعداد ميزان المراجعة',
+      d: 'التسجيل في دفتر اليومية'
+    }
+  },
+  {
+    id: 7,
+    text: 'مرحلة في الدورة المحاسبية تمثّل أهم الأدوات التي تستخدمها المؤسسات في توثيق أدائها المالي خلال مدّة زمنية معينة:',
+    choices: {
+      a: 'إعداد ميزان المراجعة',
+      b: 'إعداد القوائم المالية',
+      c: 'ترحيل القيود إلى دفتر الأستاذ',
+      d: 'إقفال الحسابات'
+    }
+  },
+  {
+    id: 8,
+    text: 'المرحلة الثالثة في الدورة المحاسبية هي:',
+    choices: {
+      a: 'إعداد ميزان المراجعة',
+      b: 'إعداد القوائم المالية',
+      c: 'ترحيل القيود إلى دفتر الأستاذ وترصيدها',
+      d: 'تسجيل العمليات في دفتر اليومية'
+    }
+  },
+  {
+    id: 9,
+    text: 'جميع الآتية تمثّل المستفيدين من المعلومات المحاسبية من خارج الشركة ما عدا:',
+    choices: { a: 'المُلّاك', b: 'المُقرِضون (الدائنون)', c: 'الأجهزة الحكومية', d: 'مجلس الإدارة' }
+  },
+  {
+    id: 10,
+    text: 'إحدى الآتية تمثّل الجهة المستفيدة من المعلومات المحاسبية من داخل الشركة:',
+    choices: { a: 'الموظفون', b: 'المُلّاك', c: 'المُقرِضون', d: 'الأجهزة الحكومية' }
+  },
+  {
+    id: 11,
+    text: 'الجهة المستفيدة من المعلومة المحاسبية الآتية: "الرقابة على الأداء وتحصيل الضرائب" هي:',
+    choices: { a: 'الموظفون', b: 'إدارة الشركة', c: 'الأجهزة الحكومية', d: 'الدائنون' }
+  }
+];
+
+// Answer key, transcribed exactly from the answer table at the bottom of
+// the worksheet image (original letters أ/ب/ج/د mapped to a/b/c/d in the
+// same left-to-right position order used in the `choices` objects above).
+const EXAM_ANSWER_KEY_FIN_CULTURE_L1 = {
+  1: 'c', 2: 'b', 3: 'a', 4: 'd', 5: 'a', 6: 'd', 7: 'b', 8: 'c', 9: 'd', 10: 'a', 11: 'c'
+};
+
 // A single exam registry — one entry per interactive exam in the site.
 // Each lesson item that should open an exam (instead of a plain resource
 // link) references one of these ids via { type: 'exam', examId: '...' }.
@@ -196,9 +291,26 @@ const EXAM_REGISTRY = {
     examName: 'الدرس (1): مقدمة في المصفوفات',
     questions: EXAM_QUESTIONS_BUSINESS_MATH_L1,
     answerKey: EXAM_ANSWER_KEY_BUSINESS_MATH_L1,
+    // No labels field -> engine falls back to the default a/b/c/d display,
+    // matching this exam's original Latin-lettered choices.
     models: {
       'النموذج الأول': { from: 1, to: 16 },
       'النموذج الثاني': { from: 17, to: 31 }
+    }
+  },
+
+  'fin-culture-l1': {
+    subject: 'الثقافة المالية',
+    unit: 'الوحدة (1) الدورة المحاسبية في المؤسسات الخدمية',
+    examName: 'الدرس (1): الدورة المحاسبية: المفهوم، والمراحل',
+    questions: EXAM_QUESTIONS_FIN_CULTURE_L1,
+    answerKey: EXAM_ANSWER_KEY_FIN_CULTURE_L1,
+    // This worksheet labels its choices with Arabic letters (أ ب ج د),
+    // not Latin a/b/c/d — the engine displays whatever is given here
+    // while still grading against the internal a/b/c/d keys below.
+    labels: { a: 'أ', b: 'ب', c: 'ج', d: 'د' },
+    models: {
+      'النموذج الأول': { from: 1, to: 11 }
     }
   }
 };
