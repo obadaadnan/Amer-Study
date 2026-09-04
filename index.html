@@ -245,8 +245,19 @@
         <p class="error-msg" id="exam-save-error" hidden></p>
         <button type="button" class="btn btn-primary btn-block" id="exam-retry-save-btn" hidden>إعادة محاولة الحفظ</button>
 
+        <button type="button" class="btn btn-ghost btn-block" id="exam-review-btn">مراجعة الإجابات</button>
         <button type="button" class="btn btn-primary btn-block" id="exam-retry-btn">إعادة المحاولة</button>
         <button class="btn btn-ghost btn-block back-btn" id="exam-result-back-btn">→ رجوع للوحدة</button>
+      </section>
+
+      <!-- ============ EXAM — REVIEW ANSWERS (generic — works for every exam) ============ -->
+      <section id="screen-exam-review" class="screen">
+        <div class="card intro-card">
+          <h1 class="page-title">مراجعة الإجابات</h1>
+          <p class="page-subtitle" id="exam-review-subtitle"></p>
+        </div>
+        <div id="exam-review-list"></div>
+        <button class="btn btn-ghost btn-block back-btn" id="exam-review-back-btn">→ رجوع للنتيجة</button>
       </section>
 
     </main>
