@@ -304,11 +304,11 @@ const EXAM_ANSWER_KEY_FIN_CULTURE_L1 = {
    choices are displayed.
    ========================================================================= */
 const EXAM_QUESTIONS_MATH_2010_L1 = [
-  {
+{
     id: 1,
-    text: 'إذا كان \\(f(x) = \\begin{cases} -2x^2+1 & x < -1 \\\\ 6 & -1 \\le x < 4 \\\\ 1-x^3 & x \\ge 4 \\end{cases}\\)، فما قيمة \\(f(-2)\\)؟',
+    text: 'إذا كان \\(f(x) = \\left\\{\\begin{array}{rl} -2x^2+1 & x < -1 \\\\ 6 & -1 \\le x < 4 \\\\ 1-x^3 & x \\ge 4 \\end{array}\\right.\\)، فما قيمة \\(f(-2)\\)؟',
     choices: { a: '\\(6\\)', b: '\\(-7\\)', c: '\\(9\\)', d: '\\(7\\)' }
-  },
+  }
   {
     id: 2,
     text: 'إذا كان \\(f(x) = \\begin{cases} 3-x & -3 \\le x < 1 \\\\ 2x^2 & x > 1 \\end{cases}\\)، حدد مجال \\(f(x)\\)؟',
