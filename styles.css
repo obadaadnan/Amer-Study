@@ -639,6 +639,66 @@ body { direction: rtl; }
   font-weight: 600;
 }
 
+/* ============ EXAM — TIMER ============ */
+.exam-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  margin-bottom: 16px;
+  position: sticky;
+  top: 8px;
+  z-index: 10;
+  box-shadow: var(--shadow-card);
+}
+.exam-timer-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.exam-timer-value {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+}
+.exam-timer.low-time .exam-timer-value { color: var(--danger); }
+
+.timeout-banner {
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--danger);
+  background: rgba(213, 69, 91, 0.1);
+  border: 1.5px solid rgba(213, 69, 91, 0.25);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+/* ============ EXAM — QUESTION / CHOICE IMAGES (original graphs, never redrawn) ============ */
+.exam-question-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 4px auto 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  background: #fff;
+}
+.exam-choice-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
 /* ============ EXAM — RESULT SCREEN ============ */
 .exam-result-card {
   text-align: center;
