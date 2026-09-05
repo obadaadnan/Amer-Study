@@ -208,6 +208,10 @@
           <h1 class="page-title" id="exam-taking-title"></h1>
           <p class="page-subtitle" id="exam-taking-subtitle"></p>
         </div>
+        <div class="exam-timer" id="exam-timer">
+          <span class="exam-timer-label">⏱️ الوقت المتبقي</span>
+          <span class="exam-timer-value" id="exam-timer-value">60:00</span>
+        </div>
         <div id="exam-questions-list"></div>
         <button type="button" class="btn btn-primary btn-block" id="exam-finish-btn">إنهاء الامتحان</button>
         <button class="btn btn-ghost btn-block back-btn" id="exam-taking-back-btn">→ رجوع</button>
@@ -218,6 +222,10 @@
         <div class="card intro-card">
           <h1 class="page-title">نتيجتك</h1>
           <p class="page-subtitle" id="exam-result-subtitle"></p>
+        </div>
+
+        <div class="timeout-banner" id="exam-timeout-banner" hidden>
+          ⏰ انتهى الوقت<br>تم إنهاء الامتحان تلقائيًا وحساب نتيجتك.
         </div>
 
         <div class="card exam-result-card">
