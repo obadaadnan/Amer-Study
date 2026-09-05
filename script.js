@@ -39,7 +39,7 @@ const UNITS_DATA = {
     {
       title: 'الوحدة (1) الاقترانات والمتبادلات الجبرية',
       items: [
-        { title: 'الدرس (1): الاقترانات المضاعفة', url: '' },
+        { title: 'الدرس (1): الاقترانات المتشعبة', type: 'exam', examId: 'math2010-l1' },
         { title: 'الدرس (2): حل معادلات القيمة المطلقة ومتبايناتها', url: '' },
         { title: 'الدرس (3): نظريتا الباقي والعوامل', url: '' },
         { title: 'الدرس (4): الجذور الصماء', url: '' },
@@ -330,13 +330,18 @@ function startExam(examId, modelName) {
   const range = exam.models[modelName];
   const questions = exam.questions.filter(function (q) { return q.id >= range.from && q.id <= range.to; });
 
+  stopExamTimer(); // clear any previous timer before starting a fresh attempt
+
   examState = {
     examId: examId,
     exam: exam,
     modelName: modelName,
     questions: questions,
     answers: {},
-    backScreen: examState ? examState.backScreen : 'screen-2009-business-math'
+    backScreen: examState ? examState.backScreen : 'screen-2009-business-math',
+    startTime: Date.now(),
+    timerInterval: null,
+    timeExpired: false
   };
 
   document.getElementById('exam-taking-title').textContent = exam.examName;
@@ -345,6 +350,61 @@ function startExam(examId, modelName) {
 
   renderExamQuestions();
   showScreen('screen-exam-taking');
+  startExamTimer();
+}
+
+/* =====================================================================
+   GLOBAL 60-MINUTE EXAM TIMER
+   -------------------------------------------------------------------
+   Applies automatically to every exam via startExam()/finishExam() —
+   nothing exam-specific needed here or in exam-data.js. Based on the
+   actual start timestamp (Date.now() - examState.startTime) rather than
+   a naive decrementing counter, so it stays correct even if a re-render,
+   a slow tab, or a scroll/navigation pauses the interval callback for a
+   moment — the remaining time is always recomputed from elapsed wall-
+   clock time, never assumed.
+   ===================================================================== */
+const EXAM_DURATION_MS = 60 * 60 * 1000; // 60 minutes, fixed for every exam
+
+function startExamTimer() {
+  updateTimerDisplay();
+  examState.timerInterval = setInterval(function () {
+    const remaining = EXAM_DURATION_MS - (Date.now() - examState.startTime);
+    if (remaining <= 0) {
+      updateTimerDisplay(0);
+      stopExamTimer();
+      examState.timeExpired = true;
+      finishExam('انتهى الوقت');
+      return;
+    }
+    updateTimerDisplay(remaining);
+  }, 1000);
+}
+
+function stopExamTimer() {
+  if (examState && examState.timerInterval) {
+    clearInterval(examState.timerInterval);
+    examState.timerInterval = null;
+  }
+}
+
+function updateTimerDisplay(remainingMsOverride) {
+  const el = document.getElementById('exam-timer-value');
+  if (!el) return;
+  const remaining = remainingMsOverride !== undefined
+    ? remainingMsOverride
+    : EXAM_DURATION_MS - (Date.now() - examState.startTime);
+  el.textContent = formatMMSS(remaining);
+
+  const timerBox = document.getElementById('exam-timer');
+  if (timerBox) timerBox.classList.toggle('low-time', remaining <= 5 * 60 * 1000);
+}
+
+function formatMMSS(ms) {
+  const totalSeconds = Math.max(0, Math.round(ms / 1000));
+  const mm = Math.floor(totalSeconds / 60);
+  const ss = totalSeconds % 60;
+  return String(mm).padStart(2, '0') + ':' + String(ss).padStart(2, '0');
 }
 
 // Every exam can optionally define its own visible choice labels (e.g. the
@@ -354,6 +414,16 @@ function startExam(examId, modelName) {
 const DEFAULT_CHOICE_LABELS = { a: 'a', b: 'b', c: 'c', d: 'd' };
 function choiceLabel(exam, letter) {
   return (exam.labels && exam.labels[letter]) || DEFAULT_CHOICE_LABELS[letter];
+}
+
+// A choice can be plain text/KaTeX (a string) or an original graph image
+// (an object { image: '...' }) — e.g. when the answer choices ARE graphs,
+// like "which of these curves represents f(x)". Never redrawn/approximated.
+function renderChoiceContent(choiceValue) {
+  if (choiceValue && typeof choiceValue === 'object' && choiceValue.image) {
+    return '<img class="exam-choice-image" src="' + choiceValue.image + '" alt="خيار الإجابة">';
+  }
+  return '<span>' + choiceValue + '</span>';
 }
 
 function renderExamQuestions() {
@@ -377,12 +447,20 @@ function renderExamQuestions() {
       '<p class="exam-question-text">' + q.text + '</p>';
     card.appendChild(header);
 
+    if (q.image) {
+      const img = document.createElement('img');
+      img.className = 'exam-question-image';
+      img.src = q.image;
+      img.alt = 'الشكل البياني للسؤال';
+      card.appendChild(img);
+    }
+
     const choicesWrap = document.createElement('div');
     choicesWrap.className = 'exam-choices';
 
     ['a', 'b', 'c', 'd'].forEach(function (letter) {
-      const choiceText = q.choices[letter];
-      if (choiceText === undefined) return;
+      const choiceValue = q.choices[letter];
+      if (choiceValue === undefined) return;
 
       const btn = document.createElement('button');
       btn.type = 'button';
@@ -391,7 +469,7 @@ function renderExamQuestions() {
       btn.dataset.letter = letter;
       btn.innerHTML =
         '<span class="exam-choice-letter">' + choiceLabel(exam, letter) + '</span>' +
-        '<span>' + choiceText + '</span>';
+        renderChoiceContent(choiceValue);
 
       btn.addEventListener('click', function () {
         examState.answers[q.id] = letter;
@@ -423,11 +501,13 @@ document.getElementById('exam-finish-btn').addEventListener('click', function ()
     if (!proceed) return;
   }
 
-  finishExam();
+  finishExam('تم الإنهاء يدويًا');
 });
 
-function finishExam() {
+function finishExam(submissionReason) {
+  stopExamTimer();
   const exam = examState.exam;
+
   let correct = 0;
   const answerRecords = [];
 
@@ -443,13 +523,22 @@ function finishExam() {
   const wrong = total - correct;
   const percentage = Math.round((correct / total) * 1000) / 10; // one decimal place
 
+  const now = Date.now();
+  const elapsedMs = Math.min(now - examState.startTime, EXAM_DURATION_MS);
+  const remainingMs = Math.max(0, EXAM_DURATION_MS - elapsedMs);
+
   examState.result = {
     total: total,
     correct: correct,
     wrong: wrong,
     scoreText: correct + ' / ' + total,
     percentage: percentage,
-    answerRecords: answerRecords
+    answerRecords: answerRecords,
+    startTimeISO: new Date(examState.startTime).toISOString(),
+    submissionTimeISO: new Date(now).toISOString(),
+    timeUsedText: formatMMSS(elapsedMs),
+    timeRemainingText: formatMMSS(remainingMs),
+    submissionReason: submissionReason || 'تم الإنهاء يدويًا'
   };
 
   renderExamResult();
@@ -508,6 +597,9 @@ function renderExamResult() {
   document.getElementById('exam-stat-score').textContent = r.scoreText;
   document.getElementById('exam-stat-correct').textContent = r.correct;
   document.getElementById('exam-stat-wrong').textContent = r.wrong;
+
+  const timeoutBanner = document.getElementById('exam-timeout-banner');
+  timeoutBanner.hidden = !examState.timeExpired;
 
   const m = motivationFor(r.percentage);
   const motivationCard = document.getElementById('exam-motivation-card');
@@ -570,6 +662,14 @@ function renderExamReview() {
       '<p class="exam-question-text">' + q.text + '</p>';
     card.appendChild(header);
 
+    if (q.image) {
+      const img = document.createElement('img');
+      img.className = 'exam-question-image';
+      img.src = q.image;
+      img.alt = 'الشكل البياني للسؤال';
+      card.appendChild(img);
+    }
+
     const status = document.createElement('div');
     status.className = 'review-status ' + (isCorrect ? 'correct' : 'incorrect');
     status.textContent = isCorrect ? '✓ إجابتك صحيحة' : '✗ إجابتك غير صحيحة';
@@ -579,8 +679,8 @@ function renderExamReview() {
     choicesWrap.className = 'exam-choices';
 
     ['a', 'b', 'c', 'd'].forEach(function (letter) {
-      const choiceText = q.choices[letter];
-      if (choiceText === undefined) return;
+      const choiceValue = q.choices[letter];
+      if (choiceValue === undefined) return;
 
       const row = document.createElement('div');
       row.className = 'review-choice-row';
@@ -593,7 +693,7 @@ function renderExamReview() {
 
       row.innerHTML =
         '<span class="exam-choice-letter">' + choiceLabel(exam, letter) + '</span>' +
-        '<span class="review-choice-text">' + choiceText + tag + '</span>';
+        '<span class="review-choice-text">' + renderChoiceContent(choiceValue) + tag + '</span>';
       choicesWrap.appendChild(row);
     });
 
@@ -632,6 +732,11 @@ function submitExamResult() {
     wrong: r.wrong,
     score: r.scoreText,
     percentage: r.percentage,
+    startTime: r.startTimeISO,
+    submissionTime: r.submissionTimeISO,
+    timeUsed: r.timeUsedText,
+    timeRemaining: r.timeRemainingText,
+    submissionReason: r.submissionReason,
     answersJson: JSON.stringify(r.answerRecords)
   })
     .then(function (result) {
