@@ -182,7 +182,7 @@ const EXAM_QUESTIONS_BUSINESS_MATH_L1 = [
 const EXAM_ANSWER_KEY_BUSINESS_MATH_L1 = {
   1: 'b', 2: 'a', 3: 'a', 4: 'c', 5: 'b', 6: 'b', 7: 'c', 8: 'a', 9: 'b', 10: 'c',
   11: 'c', 12: 'd', 13: 'a', 14: 'b', 15: 'a', 16: 'c', 17: 'b', 18: 'b', 19: 'c', 20: 'a',
-  21: 'c', 22: 'a', 23: 'b', 24: 'b', 25: 'c', 26: 'd', 27: 'c', 28: 'd', 29: 'c', 30: 'd',
+  21: 'c', 22: 'a', 23: 'b', 24: 'd', 25: 'c', 26: 'd', 27: 'c', 28: 'd', 29: 'c', 30: 'd',
   31: 'b'
 };
 
@@ -220,7 +220,7 @@ const EXAM_QUESTIONS_FIN_CULTURE_L1 = [
   {
     id: 4,
     text: 'تُقدّم صورة واضحة وشاملة عن أداء المؤسسة المالي:',
-    choices: { a: 'العمليات المالية', b: 'الاستدامة', c: 'المعلومات المحاسبية', d: 'دفتر اليومية' }
+    choices: { a: 'العمليات المالية', b: 'الاستدامة', c: 'دفتر اليومية', d: 'المعلومات المحاسبية' }
   },
   {
     id: 5,
@@ -281,6 +281,235 @@ const EXAM_ANSWER_KEY_FIN_CULTURE_L1 = {
   1: 'c', 2: 'b', 3: 'a', 4: 'd', 5: 'a', 6: 'd', 7: 'b', 8: 'c', 9: 'd', 10: 'a', 11: 'c'
 };
 
+/* =========================================================================
+   بنك أسئلة امتحان الدرس الأول: الاقترانات المتشعبة — رياضيات، جيل 2010
+   -------------------------------------------------------------------------
+   Transcribed exactly from the uploaded original exam PDF (النموذج الأول),
+   25 questions. Graphs/diagrams are the ORIGINAL images cropped directly
+   from the source PDF (assets/exam-2010-l1/) — not redrawn or approximated
+   — so axis direction, scale, points, and curves exactly match the
+   teacher's exam. Answer key transcribed exactly from the separately
+   uploaded official answer sheet image.
+
+   NOTE: the exam's own title/header calls this lesson "الاقترانات
+   المتشعبة" (consistently on the cover page and exam header) — the site
+   previously had this lesson labeled "الاقترانات المضاعفة". Corrected the
+   lesson title in UNITS_DATA to match the exam's actual name, since exact
+   accuracy takes priority.
+
+   Piecewise functions use KaTeX's \cases environment, and each graph is
+   an <img> (rendered via the `image` field) rather than plain text, so
+   axis orientation can never be affected by RTL — see script.js's
+   renderExamQuestions/renderExamReview for how `image` and image-based
+   choices are displayed.
+   ========================================================================= */
+const EXAM_QUESTIONS_MATH_2010_L1 = [
+  {
+    id: 1,
+    text: 'إذا كان \\(f(x) = \\begin{cases} -2x^2+1 & x < -1 \\\\ 6 & -1 \\le x < 4 \\\\ 1-x^3 & x \\ge 4 \\end{cases}\\)، فما قيمة \\(f(-2)\\)؟',
+    choices: { a: '\\(6\\)', b: '\\(-7\\)', c: '\\(9\\)', d: '\\(7\\)' }
+  },
+  {
+    id: 2,
+    text: 'إذا كان \\(f(x) = \\begin{cases} 3-x & -3 \\le x < 1 \\\\ 2x^2 & x > 1 \\end{cases}\\)، حدد مجال \\(f(x)\\)؟',
+    choices: {
+      a: '\\([-3,1) \\cup (1,\\infty)\\)', b: '\\((-3,\\infty)\\)',
+      c: '\\([-3,1] \\cup [1,\\infty)\\)', d: '\\([-3,\\infty)\\)'
+    }
+  },
+  {
+    id: 3,
+    text: 'من خلال التمثيل البياني الآتي حدد المدى لـ \\(f(x)\\)؟',
+    image: 'assets/exam-2010-l1/q3.png',
+    choices: { a: '\\([-1,\\infty]\\)', b: '\\((-1,\\infty)\\)', c: '\\((1,\\infty)\\)', d: '\\([1,\\infty)\\)' }
+  },
+  {
+    id: 4,
+    text: 'من خلال التمثيل البياني الآتي، جد قيمة \\(f(1)\\)؟',
+    image: 'assets/exam-2010-l1/q4.png',
+    choices: { a: '\\(1\\)', b: '\\(0\\)', c: '\\(3\\)', d: '\\(-1\\)' }
+  },
+  {
+    id: 5,
+    text: 'من خلال التمثيل البياني جد معادلة المستقيم بصيغة الميل والمقطع:',
+    image: 'assets/exam-2010-l1/q5.png',
+    choices: {
+      a: '\\(y=\\frac{1}{2}x+1\\)', b: '\\(y=2x-1\\)',
+      c: '\\(y=-2x+1\\)', d: '\\(y=2x+1\\)'
+    }
+  },
+  {
+    id: 6,
+    text: 'أي الآتية تمثل منحنى الاقتران: \\(f(x)=|2x-5|\\)؟',
+    choices: {
+      a: { image: 'assets/exam-2010-l1/q6-a.png' },
+      b: { image: 'assets/exam-2010-l1/q6-b.png' },
+      c: { image: 'assets/exam-2010-l1/q6-c.png' },
+      d: { image: 'assets/exam-2010-l1/q6-d.png' }
+    }
+  },
+  {
+    id: 7,
+    text: 'إحداثيات رأس الاقتران هي:',
+    image: 'assets/exam-2010-l1/q7-11.png',
+    choices: { a: '\\((0,-3)\\)', b: '\\((-3,0)\\)', c: '\\((3,0)\\)', d: '\\((0,3)\\)' }
+  },
+  {
+    id: 8,
+    text: 'قاعدة الاقتران الممثل بيانياً هي:',
+    image: 'assets/exam-2010-l1/q7-11.png',
+    choices: {
+      a: '\\(f(x)=\\frac{4}{3}|x+3|\\)', b: '\\(f(x)=\\frac{4}{3}|x-3|\\)',
+      c: '\\(f(x)=-\\frac{4}{3}|x+3|\\)', d: '\\(f(x)=|x+3|\\)'
+    }
+  },
+  {
+    id: 9,
+    text: 'قيمة الثابت \\(a\\) في قاعدة الاقتران \\(f(x)=a|x+3|\\):',
+    image: 'assets/exam-2010-l1/q7-11.png',
+    choices: { a: '\\(-\\frac{4}{3}\\)', b: '\\(\\frac{3}{4}\\)', c: '\\(\\frac{4}{3}\\)', d: '\\(1\\)' }
+  },
+  {
+    id: 10,
+    text: 'المجال لهذا الاقتران هو:',
+    image: 'assets/exam-2010-l1/q7-11.png',
+    choices: {
+      a: '\\(\\{x \\mid x \\ge -3\\}\\)', b: '\\(\\{x \\mid x \\le -3\\}\\)',
+      c: '\\(\\mathbb{R}\\)', d: '\\(\\{x \\mid x \\neq -3\\}\\)'
+    }
+  },
+  {
+    id: 11,
+    text: 'مدى الاقتران هو:',
+    image: 'assets/exam-2010-l1/q7-11.png',
+    choices: { a: '\\(y \\ge 0\\)', b: '\\(y > 0\\)', c: '\\(y \\le 0\\)', d: '\\(y < 0\\)' }
+  },
+  {
+    id: 12,
+    text: 'إذا علمت أنّ: \\(f(x) = \\begin{cases} 1 & x \\le 3 \\\\ -1 & x > 3 \\end{cases}\\)، فإن مدى الاقتران \\(f(x)\\) هو:',
+    choices: { a: '\\((-1,1)\\)', b: '\\(\\{-1,1\\}\\)', c: '\\(\\{3,-3\\}\\)', d: '\\([-1,1]\\)' }
+  },
+  {
+    id: 13,
+    text: 'زادت شركة رواتب موظفيها وفق الأسس الآتية: الرواتب التي تقل عن 400 دينار زادت بنسبة 15%، والرواتب من 400 دينار إلى أقل من 600 دينار زادت بنسبة 10%، مع علاوة ثابتة بقيمة 20 ديناراً. أكتب اقتراناً متشعباً لحساب الراتب الجديد لموظفي الشركة.',
+    choices: {
+      a: '\\(f(x)=\\begin{cases} 1.15x & x<400 \\\\ 1.1x+20 & 400 \\le x<600 \\end{cases}\\)',
+      b: '\\(f(x)=\\begin{cases} 0.15x & x<400 \\\\ 1.1x & 400 \\le x<600 \\end{cases}\\)',
+      c: '\\(f(x)=\\begin{cases} 0.15x & x<400 \\\\ 1.1x+20 & 400 < x \\le 600 \\end{cases}\\)',
+      d: '\\(f(x)=\\begin{cases} 1.15x & x \\le 400 \\\\ 1.1x+20 & 400 < x \\le 600 \\end{cases}\\)'
+    }
+  },
+  {
+    id: 14,
+    text: 'قاعدة الاقتران الممثل بيانياً هي:',
+    image: 'assets/exam-2010-l1/q14.png',
+    choices: {
+      a: '\\(f(x)=\\frac{1}{3}|x|\\)', b: '\\(f(x)=3|x|\\)',
+      c: '\\(f(x)=\\frac{-1}{3}|x|\\)', d: '\\(f(x)=-3|x|\\)'
+    }
+  },
+  {
+    id: 15,
+    text: 'قاعدة الاقتران المتشعب الممثل بيانياً في الشكل الآتي هي:',
+    image: 'assets/exam-2010-l1/q15.png',
+    choices: {
+      a: '\\(f(x)=\\begin{cases} -x+2 & x \\neq 1 \\\\ 3 & x=1 \\end{cases}\\)',
+      b: '\\(f(x)=\\begin{cases} x+2 & x \\neq 1 \\\\ 3 & x=1 \\end{cases}\\)',
+      c: '\\(f(x)=\\begin{cases} x+1 & x \\neq 1 \\\\ 2 & x=1 \\end{cases}\\)',
+      d: '\\(f(x)=\\begin{cases} x-2 & x \\neq 1 \\\\ 3 & x=1 \\end{cases}\\)'
+    }
+  },
+  {
+    id: 16,
+    text: 'أي الآتية تمثل منحنى الاقتران: \\(f(x)=-|x-4|+1\\)؟',
+    choices: {
+      a: { image: 'assets/exam-2010-l1/q16-a.png' },
+      b: { image: 'assets/exam-2010-l1/q16-b.png' },
+      c: { image: 'assets/exam-2010-l1/q16-c.png' },
+      d: { image: 'assets/exam-2010-l1/q16-d.png' }
+    }
+  },
+  {
+    id: 17,
+    text: 'من خلال التمثيل البياني الآتي حدد المدى لـ \\(f(x)\\)؟',
+    image: 'assets/exam-2010-l1/q17.png',
+    choices: {
+      a: '\\((-\\infty,5] \\cup [6,\\infty)\\)', b: '\\((-\\infty,5) \\cup [6,\\infty)\\)',
+      c: '\\((-\\infty,5) \\cup (6,\\infty)\\)', d: '\\((-\\infty,\\infty)\\)'
+    }
+  },
+  {
+    id: 18,
+    text: 'من خلال التمثيل البياني الآتي حدد المدى لـ \\(f(x)\\)؟',
+    image: 'assets/exam-2010-l1/q18.png',
+    choices: {
+      a: '\\(\\mathbb{R}-\\{7\\}\\)', b: '\\(\\mathbb{R}-\\{3\\}\\)',
+      c: '\\((-\\infty,\\infty)\\)', d: '\\((-\\infty,\\infty) \\cup (3,\\infty)\\)'
+    }
+  },
+  {
+    id: 19,
+    text: 'إذا كان: \\(f(x)=\\begin{cases} 1-2x & x<1 \\\\ -3+x^2 & x=1 \\\\ -2 & x>1 \\end{cases}\\)، فإنّ \\(3f(0)\\) تساوي؟',
+    choices: { a: '\\(0\\)', b: '\\(3\\)', c: '\\(-3\\)', d: '\\(-1\\)' }
+  },
+  {
+    id: 20,
+    text: 'إذا كان: \\(f(x)=\\begin{cases} 3x^2+x & x \\le -1 \\\\ 4 & x>-1 \\end{cases}\\)، فإنّ \\(f(-1)-2\\) تساوي؟',
+    choices: { a: '\\(2\\)', b: '\\(1\\)', c: '\\(-1\\)', d: '\\(0\\)' }
+  },
+  {
+    id: 21,
+    text: 'قاعدة الاقتران المتشعب للشكل الآتي الممثل بيانياً:',
+    image: 'assets/exam-2010-l1/q21.png',
+    choices: {
+      a: '\\(f(x)=\\begin{cases} 1 & -4 \\le x \\le -1 \\\\ -x+1 & -1<x \\le 2 \\\\ -2 & 2<x \\le 5 \\end{cases}\\)',
+      b: '\\(f(x)=\\begin{cases} -1 & -4 \\le x \\le -1 \\\\ x+1 & -1<x \\le 2 \\\\ -2 & 2<x \\le 5 \\end{cases}\\)',
+      c: '\\(f(x)=\\begin{cases} 1 & -4<x<-1 \\\\ -x+1 & -1 \\le x<2 \\\\ -2 & x<2 \\end{cases}\\)',
+      d: '\\(f(x)=\\begin{cases} 1 & -4<x<-1 \\\\ x+1 & -1<x \\le 2 \\\\ 2 & 2<x \\le 5 \\end{cases}\\)'
+    }
+  },
+  {
+    id: 22,
+    text: 'قاعدة الاقتران المتشعب للشكل الآتي الممثل بيانياً:',
+    image: 'assets/exam-2010-l1/q22.png',
+    choices: {
+      a: '\\(f(x)=\\begin{cases} x & x \\le 0 \\\\ \\frac{1}{3}x+2 & x>0 \\end{cases}\\)',
+      b: '\\(f(x)=\\begin{cases} x & x \\le 0 \\\\ 3x+1 & x>0 \\end{cases}\\)',
+      c: '\\(f(x)=\\begin{cases} x & x \\ge 2 \\\\ \\frac{1}{3}x+2 & x<2 \\end{cases}\\)',
+      d: '\\(f(x)=\\begin{cases} x & x<0 \\\\ 3x+1 & x \\ge 0 \\end{cases}\\)'
+    }
+  },
+  {
+    id: 23,
+    text: 'أيّ الاقترانات الآتية يُمثّل قاعدة المنحنى المجاور؟',
+    image: 'assets/exam-2010-l1/q23.png',
+    choices: { a: '\\(g(x)=|x+1|\\)', b: '\\(g(x)=|x-1|\\)', c: '\\(g(x)=|x|-1\\)', d: '\\(g(x)=-|x|\\)' }
+  },
+  {
+    id: 24,
+    text: 'إذا كان: \\(f(x)=\\begin{cases} kx & x<0 \\\\ 3-2x & x \\ge 0 \\end{cases}\\)، فإنّ قيمة الثابت \\(k\\) التي تجعل \\(f(0)=f(-1)\\) هي؟',
+    choices: { a: '\\(-3\\)', b: '\\(3\\)', c: '\\(-1\\)', d: '\\(1\\)' }
+  },
+  {
+    id: 25,
+    text: 'إذا كان \\(f(x)=|7x-5|+3\\) فإنّ أي الاقترانات الآتية يُمثّل إعادة التعريف الصحيحة للاقتران \\(f(x)\\):',
+    choices: {
+      a: '\\(f(x)=\\begin{cases} 7x-2 & x \\ge \\frac{7}{5} \\\\ -7+8 & x<\\frac{7}{5} \\end{cases}\\)',
+      b: '\\(f(x)=\\begin{cases} 7x+2 & x \\ge \\frac{5}{7} \\\\ 7x+8 & x<\\frac{5}{7} \\end{cases}\\)',
+      c: '\\(f(x)=\\begin{cases} 7x-2 & x \\ge \\frac{5}{7} \\\\ -7x+8 & x<\\frac{5}{7} \\end{cases}\\)',
+      d: '\\(f(x)=\\begin{cases} 7x-2 & x \\ge 3 \\\\ -7x+8 & x<3 \\end{cases}\\)'
+    }
+  }
+];
+
+// Answer key, transcribed exactly from the official answer-sheet image
+// (النموذج الأول — الوحدة الأولى), questions 1–25.
+const EXAM_ANSWER_KEY_MATH_2010_L1 = {
+  1: 'b', 2: 'a', 3: 'b', 4: 'c', 5: 'd', 6: 'a', 7: 'b', 8: 'a', 9: 'c', 10: 'c',
+  11: 'a', 12: 'b', 13: 'a', 14: 'd', 15: 'a', 16: 'd', 17: 'b', 18: 'a', 19: 'b', 20: 'd',
+  21: 'a', 22: 'a', 23: 'c', 24: 'a', 25: 'c'
+};
+
 // A single exam registry — one entry per interactive exam in the site.
 // Each lesson item that should open an exam (instead of a plain resource
 // link) references one of these ids via { type: 'exam', examId: '...' }.
@@ -311,6 +540,18 @@ const EXAM_REGISTRY = {
     labels: { a: 'أ', b: 'ب', c: 'ج', d: 'د' },
     models: {
       'النموذج الأول': { from: 1, to: 11 }
+    }
+  },
+
+  'math2010-l1': {
+    subject: 'رياضيات',
+    unit: 'الوحدة (1) الاقترانات والمتبادلات الجبرية',
+    examName: 'الدرس (1): الاقترانات المتشعبة',
+    questions: EXAM_QUESTIONS_MATH_2010_L1,
+    answerKey: EXAM_ANSWER_KEY_MATH_2010_L1,
+    // Latin a/b/c/d, matching this exam's original choice labels -> no labels override needed.
+    models: {
+      'النموذج الأول': { from: 1, to: 25 }
     }
   }
 };
