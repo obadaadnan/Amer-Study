@@ -220,7 +220,7 @@ const EXAM_QUESTIONS_FIN_CULTURE_L1 = [
   {
     id: 4,
     text: 'تُقدّم صورة واضحة وشاملة عن أداء المؤسسة المالي:',
-    choices: { a: 'العمليات المالية', b: 'الاستدامة', c: 'دفتر اليومية', d: 'المعلومات المحاسبية' }
+    choices: { a: 'العمليات المالية', b: 'الاستدامة', c: 'المعلومات المحاسبية', d: 'دفتر اليومية' }
   },
   {
     id: 5,
@@ -304,14 +304,14 @@ const EXAM_ANSWER_KEY_FIN_CULTURE_L1 = {
    choices are displayed.
    ========================================================================= */
 const EXAM_QUESTIONS_MATH_2010_L1 = [
-{
+  {
     id: 1,
-    text: 'إذا كان \\(f(x) = \\left\\{\\begin{array}{rl} -2x^2+1 & x < -1 \\\\ 6 & -1 \\le x < 4 \\\\ 1-x^3 & x \\ge 4 \\end{array}\\right.\\)، فما قيمة \\(f(-2)\\)؟',
+    text: 'إذا كان \\(f(x) = \\begin{cases} -2x^2+1 & x &lt; -1 \\\\ 6 & -1 \\le x &lt; 4 \\\\ 1-x^3 & x \\ge 4 \\end{cases}\\)، فما قيمة \\(f(-2)\\)؟',
     choices: { a: '\\(6\\)', b: '\\(-7\\)', c: '\\(9\\)', d: '\\(7\\)' }
   },
   {
     id: 2,
-    text: 'إذا كان \\(f(x) = \\begin{cases} 3-x & -3 \\le x < 1 \\\\ 2x^2 & x > 1 \\end{cases}\\)، حدد مجال \\(f(x)\\)؟',
+    text: 'إذا كان \\(f(x) = \\begin{cases} 3-x & -3 \\le x &lt; 1 \\\\ 2x^2 & x &gt; 1 \\end{cases}\\)، حدد مجال \\(f(x)\\)؟',
     choices: {
       a: '\\([-3,1) \\cup (1,\\infty)\\)', b: '\\((-3,\\infty)\\)',
       c: '\\([-3,1] \\cup [1,\\infty)\\)', d: '\\([-3,\\infty)\\)'
@@ -382,21 +382,21 @@ const EXAM_QUESTIONS_MATH_2010_L1 = [
     id: 11,
     text: 'مدى الاقتران هو:',
     image: 'assets/exam-2010-l1/q7-11.png',
-    choices: { a: '\\(y \\ge 0\\)', b: '\\(y > 0\\)', c: '\\(y \\le 0\\)', d: '\\(y < 0\\)' }
+    choices: { a: '\\(y \\ge 0\\)', b: '\\(y &gt; 0\\)', c: '\\(y \\le 0\\)', d: '\\(y &lt; 0\\)' }
   },
   {
     id: 12,
-    text: 'إذا علمت أنّ: \\(f(x) = \\begin{cases} 1 & x \\le 3 \\\\ -1 & x > 3 \\end{cases}\\)، فإن مدى الاقتران \\(f(x)\\) هو:',
+    text: 'إذا علمت أنّ: \\(f(x) = \\begin{cases} 1 & x \\le 3 \\\\ -1 & x &gt; 3 \\end{cases}\\)، فإن مدى الاقتران \\(f(x)\\) هو:',
     choices: { a: '\\((-1,1)\\)', b: '\\(\\{-1,1\\}\\)', c: '\\(\\{3,-3\\}\\)', d: '\\([-1,1]\\)' }
   },
   {
     id: 13,
     text: 'زادت شركة رواتب موظفيها وفق الأسس الآتية: الرواتب التي تقل عن 400 دينار زادت بنسبة 15%، والرواتب من 400 دينار إلى أقل من 600 دينار زادت بنسبة 10%، مع علاوة ثابتة بقيمة 20 ديناراً. أكتب اقتراناً متشعباً لحساب الراتب الجديد لموظفي الشركة.',
     choices: {
-      a: '\\(f(x)=\\begin{cases} 1.15x & x<400 \\\\ 1.1x+20 & 400 \\le x<600 \\end{cases}\\)',
-      b: '\\(f(x)=\\begin{cases} 0.15x & x<400 \\\\ 1.1x & 400 \\le x<600 \\end{cases}\\)',
-      c: '\\(f(x)=\\begin{cases} 0.15x & x<400 \\\\ 1.1x+20 & 400 < x \\le 600 \\end{cases}\\)',
-      d: '\\(f(x)=\\begin{cases} 1.15x & x \\le 400 \\\\ 1.1x+20 & 400 < x \\le 600 \\end{cases}\\)'
+      a: '\\(f(x)=\\begin{cases} 1.15x & x&lt;400 \\\\ 1.1x+20 & 400 \\le x&lt;600 \\end{cases}\\)',
+      b: '\\(f(x)=\\begin{cases} 0.15x & x&lt;400 \\\\ 1.1x & 400 \\le x&lt;600 \\end{cases}\\)',
+      c: '\\(f(x)=\\begin{cases} 0.15x & x&lt;400 \\\\ 1.1x+20 & 400 &lt; x \\le 600 \\end{cases}\\)',
+      d: '\\(f(x)=\\begin{cases} 1.15x & x \\le 400 \\\\ 1.1x+20 & 400 &lt; x \\le 600 \\end{cases}\\)'
     }
   },
   {
@@ -449,12 +449,12 @@ const EXAM_QUESTIONS_MATH_2010_L1 = [
   },
   {
     id: 19,
-    text: 'إذا كان: \\(f(x)=\\begin{cases} 1-2x & x<1 \\\\ -3+x^2 & x=1 \\\\ -2 & x>1 \\end{cases}\\)، فإنّ \\(3f(0)\\) تساوي؟',
+    text: 'إذا كان: \\(f(x)=\\begin{cases} 1-2x & x&lt;1 \\\\ -3+x^2 & x=1 \\\\ -2 & x&gt;1 \\end{cases}\\)، فإنّ \\(3f(0)\\) تساوي؟',
     choices: { a: '\\(0\\)', b: '\\(3\\)', c: '\\(-3\\)', d: '\\(-1\\)' }
   },
   {
     id: 20,
-    text: 'إذا كان: \\(f(x)=\\begin{cases} 3x^2+x & x \\le -1 \\\\ 4 & x>-1 \\end{cases}\\)، فإنّ \\(f(-1)-2\\) تساوي؟',
+    text: 'إذا كان: \\(f(x)=\\begin{cases} 3x^2+x & x \\le -1 \\\\ 4 & x&gt;-1 \\end{cases}\\)، فإنّ \\(f(-1)-2\\) تساوي؟',
     choices: { a: '\\(2\\)', b: '\\(1\\)', c: '\\(-1\\)', d: '\\(0\\)' }
   },
   {
@@ -462,10 +462,10 @@ const EXAM_QUESTIONS_MATH_2010_L1 = [
     text: 'قاعدة الاقتران المتشعب للشكل الآتي الممثل بيانياً:',
     image: 'assets/exam-2010-l1/q21.png',
     choices: {
-      a: '\\(f(x)=\\begin{cases} 1 & -4 \\le x \\le -1 \\\\ -x+1 & -1<x \\le 2 \\\\ -2 & 2<x \\le 5 \\end{cases}\\)',
-      b: '\\(f(x)=\\begin{cases} -1 & -4 \\le x \\le -1 \\\\ x+1 & -1<x \\le 2 \\\\ -2 & 2<x \\le 5 \\end{cases}\\)',
-      c: '\\(f(x)=\\begin{cases} 1 & -4<x<-1 \\\\ -x+1 & -1 \\le x<2 \\\\ -2 & x<2 \\end{cases}\\)',
-      d: '\\(f(x)=\\begin{cases} 1 & -4<x<-1 \\\\ x+1 & -1<x \\le 2 \\\\ 2 & 2<x \\le 5 \\end{cases}\\)'
+      a: '\\(f(x)=\\begin{cases} 1 & -4 \\le x \\le -1 \\\\ -x+1 & -1&lt;x \\le 2 \\\\ -2 & 2&lt;x \\le 5 \\end{cases}\\)',
+      b: '\\(f(x)=\\begin{cases} -1 & -4 \\le x \\le -1 \\\\ x+1 & -1&lt;x \\le 2 \\\\ -2 & 2&lt;x \\le 5 \\end{cases}\\)',
+      c: '\\(f(x)=\\begin{cases} 1 & -4&lt;x&lt;-1 \\\\ -x+1 & -1 \\le x&lt;2 \\\\ -2 & x&lt;2 \\end{cases}\\)',
+      d: '\\(f(x)=\\begin{cases} 1 & -4&lt;x&lt;-1 \\\\ x+1 & -1&lt;x \\le 2 \\\\ 2 & 2&lt;x \\le 5 \\end{cases}\\)'
     }
   },
   {
@@ -473,10 +473,10 @@ const EXAM_QUESTIONS_MATH_2010_L1 = [
     text: 'قاعدة الاقتران المتشعب للشكل الآتي الممثل بيانياً:',
     image: 'assets/exam-2010-l1/q22.png',
     choices: {
-      a: '\\(f(x)=\\begin{cases} x & x \\le 0 \\\\ \\frac{1}{3}x+2 & x>0 \\end{cases}\\)',
-      b: '\\(f(x)=\\begin{cases} x & x \\le 0 \\\\ 3x+1 & x>0 \\end{cases}\\)',
-      c: '\\(f(x)=\\begin{cases} x & x \\ge 2 \\\\ \\frac{1}{3}x+2 & x<2 \\end{cases}\\)',
-      d: '\\(f(x)=\\begin{cases} x & x<0 \\\\ 3x+1 & x \\ge 0 \\end{cases}\\)'
+      a: '\\(f(x)=\\begin{cases} x & x \\le 0 \\\\ \\frac{1}{3}x+2 & x&gt;0 \\end{cases}\\)',
+      b: '\\(f(x)=\\begin{cases} x & x \\le 0 \\\\ 3x+1 & x&gt;0 \\end{cases}\\)',
+      c: '\\(f(x)=\\begin{cases} x & x \\ge 2 \\\\ \\frac{1}{3}x+2 & x&lt;2 \\end{cases}\\)',
+      d: '\\(f(x)=\\begin{cases} x & x&lt;0 \\\\ 3x+1 & x \\ge 0 \\end{cases}\\)'
     }
   },
   {
@@ -487,17 +487,17 @@ const EXAM_QUESTIONS_MATH_2010_L1 = [
   },
   {
     id: 24,
-    text: 'إذا كان: \\(f(x)=\\begin{cases} kx & x<0 \\\\ 3-2x & x \\ge 0 \\end{cases}\\)، فإنّ قيمة الثابت \\(k\\) التي تجعل \\(f(0)=f(-1)\\) هي؟',
+    text: 'إذا كان: \\(f(x)=\\begin{cases} kx & x&lt;0 \\\\ 3-2x & x \\ge 0 \\end{cases}\\)، فإنّ قيمة الثابت \\(k\\) التي تجعل \\(f(0)=f(-1)\\) هي؟',
     choices: { a: '\\(-3\\)', b: '\\(3\\)', c: '\\(-1\\)', d: '\\(1\\)' }
   },
   {
     id: 25,
     text: 'إذا كان \\(f(x)=|7x-5|+3\\) فإنّ أي الاقترانات الآتية يُمثّل إعادة التعريف الصحيحة للاقتران \\(f(x)\\):',
     choices: {
-      a: '\\(f(x)=\\begin{cases} 7x-2 & x \\ge \\frac{7}{5} \\\\ -7+8 & x<\\frac{7}{5} \\end{cases}\\)',
-      b: '\\(f(x)=\\begin{cases} 7x+2 & x \\ge \\frac{5}{7} \\\\ 7x+8 & x<\\frac{5}{7} \\end{cases}\\)',
-      c: '\\(f(x)=\\begin{cases} 7x-2 & x \\ge \\frac{5}{7} \\\\ -7x+8 & x<\\frac{5}{7} \\end{cases}\\)',
-      d: '\\(f(x)=\\begin{cases} 7x-2 & x \\ge 3 \\\\ -7x+8 & x<3 \\end{cases}\\)'
+      a: '\\(f(x)=\\begin{cases} 7x-2 & x \\ge \\frac{7}{5} \\\\ -7+8 & x&lt;\\frac{7}{5} \\end{cases}\\)',
+      b: '\\(f(x)=\\begin{cases} 7x+2 & x \\ge \\frac{5}{7} \\\\ 7x+8 & x&lt;\\frac{5}{7} \\end{cases}\\)',
+      c: '\\(f(x)=\\begin{cases} 7x-2 & x \\ge \\frac{5}{7} \\\\ -7x+8 & x&lt;\\frac{5}{7} \\end{cases}\\)',
+      d: '\\(f(x)=\\begin{cases} 7x-2 & x \\ge 3 \\\\ -7x+8 & x&lt;3 \\end{cases}\\)'
     }
   }
 ];
