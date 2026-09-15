@@ -82,9 +82,9 @@ const UNITS_DATA = {
       title: 'الوحدة (1) المصفوفات',
       items: [
         { title: 'الدرس (1): مقدمة في المصفوفات', type: 'exam', examId: 'business-math-l1' },
-        { title: 'الدرس (2): العمليات على المصفوفات', url: '' },
-        { title: 'الدرس (3): ضرب المصفوفات', url: '' },
-        { title: 'الدرس (4): المحددات وقاعدة كريمر', url: '' },
+        { title: 'الدرس (2): العمليات على المصفوفات', type: 'exam', examId: 'bm-l2' },
+        { title: 'الدرس (3): ضرب المصفوفات', type: 'exam', examId: 'bm-l3' },
+        { title: 'الدرس (4): المحددات وقاعدة كريمر', type: 'exam', examId: 'bm-l4' },
         { title: 'اختبار نهاية الوحدة', url: '' }
       ]
     },
