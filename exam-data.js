@@ -654,6 +654,520 @@ const EXAM_ANSWER_KEY_MATH_2010_L1 = {
   21: 'a', 22: 'a', 23: 'c', 24: 'a', 25: 'c'
 };
 
+/* =========================================================================
+   بنك أسئلة اختبار الدرس الثاني: العمليات على المصفوفات
+   رياضيات الأعمال — جيل 2009
+   -------------------------------------------------------------------------
+   Transcribed exactly from the teacher's PDF (ورقة عمل — الدرس الثاني).
+   19 questions. Answer key taken from the answer table at the end of THIS
+   lesson only, and independently cross-checked against the highlighted
+   choice on every question in the PDF — all 19 agree.
+   ========================================================================= */
+const EXAM_QUESTIONS_BM_L2 = [
+  {
+    id: 1,
+    text: 'إذا كانت: \\(A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}\\) ، \\(B = \\begin{bmatrix} 5 & 0 \\\\ -6 & 8 \\end{bmatrix}\\) ، فإن ناتج \\(3A + B\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 8 & 3 \\\\ 15 & 20 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 8 & 6 \\\\ 3 & 20 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 8 & 6 \\\\ 15 & 8 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 8 & 3 \\\\ 6 & 20 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 2,
+    text: 'إذا كانت: \\(A = \\begin{bmatrix} 2 & 4 & 6 \\\\ -1 & -5 & 4 \\end{bmatrix}\\) ، \\(B = \\begin{bmatrix} 5 & -2 \\\\ 3 & 0 \\\\ -7 & 6 \\end{bmatrix}\\) ، فإن ناتج \\(A + B\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 7 & 2 & 9 \\\\ -1 & -12 & 10 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 7 & 2 \\\\ 9 & -1 \\\\ -12 & 10 \\end{bmatrix}\\)',
+      c: 'لا يمكن جمعهما؛ لأنَّهما من رتبتين مختلفتين',
+      d: 'لا يمكن جمعهما؛ لأنَّهما من رتبتين متشابهتين'
+    }
+  },
+  {
+    id: 3,
+    text: 'إذا كانت: \\(A = \\begin{bmatrix} 15 & -21 \\\\ 9 & 5 \\end{bmatrix}\\) ، فإن ناتج \\(\\frac{2}{3}A\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} -14 & 10 \\\\ \\frac{10}{3} & 6 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 10 & -14 \\\\ 6 & \\frac{10}{3} \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 22.5 & -18 \\\\ 13.5 & 7.5 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -18 & 22.5 \\\\ 7.5 & 13.5 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 4,
+    text: 'إذا كان: \\(D = \\begin{bmatrix} 0 & 4 & -3 \\\\ 7 & -2 & 1 \\\\ 8 & 10 & 6 \\end{bmatrix}\\) ، فإن ناتج \\(1.5D\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 1.5 & 5.5 & -1.5 \\\\ 8.5 & -0.5 & 2.5 \\\\ 9.5 & 11.5 & 7.5 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 1.5 & -2.5 & 4.5 \\\\ -5.5 & 3.5 & 0.5 \\\\ -6.5 & -8.5 & -4.5 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 0 & 6 & -4.5 \\\\ 10.5 & -3 & 1.5 \\\\ 12 & 15 & 9 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 0 & 4 & -3 \\\\ 7 & -2 & 1 \\\\ 8 & 10 & 6 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 5,
+    text: 'إذا كان: \\(G = \\begin{bmatrix} 3 & 0 & 7 \\end{bmatrix}\\) ، \\(H = \\begin{bmatrix} 6 & -4 & 9 \\end{bmatrix}\\) ، فإن ناتج: \\(5(G + H)\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 9 & -4 & 16 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 15 & 5 & 35 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 30 & -20 & 45 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 45 & -20 & 80 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 6,
+    text: 'جد ناتج ما يلي: \\(\\begin{bmatrix} 9 \\\\ 5 \\\\ 8 \\end{bmatrix} - \\begin{bmatrix} -2 \\\\ 6 \\\\ 4 \\end{bmatrix}\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 11 \\\\ -1 \\\\ 4 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 11 \\\\ 11 \\\\ 12 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} -11 \\\\ 1 \\\\ -4 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -18 \\\\ 30 \\\\ 32 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 7,
+    text: 'جد ناتج ما يلي: \\(2\\begin{bmatrix} 1 & -5 \\\\ 2 & 9 \\end{bmatrix} + 3\\begin{bmatrix} 4 & 2 \\\\ 3 & -5 \\end{bmatrix}\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 5 & -3 \\\\ 5 & 4 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 14 & -4 \\\\ 13 & 3 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 12 & 6 \\\\ 9 & -15 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 2 & -10 \\\\ 4 & 18 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 8,
+    text: 'جد ناتج ما يلي: \\(-4\\left( \\begin{bmatrix} 0 & 1 & 6 \\\\ -2 & 7 & 4 \\\\ 6 & 3 & 5 \\end{bmatrix} - \\begin{bmatrix} 9 & 6 & 10 \\\\ 5 & -4 & 1 \\\\ 8 & -1 & 7 \\end{bmatrix} \\right)\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 36 & 26 & 16 \\\\ 28 & -44 & -12 \\\\ -40 & 16 & -48 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} -9 & -5 & -4 \\\\ -7 & 11 & 3 \\\\ -2 & 4 & -2 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 36 & 20 & 16 \\\\ 28 & -44 & -12 \\\\ 8 & -16 & 8 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -9 & -10 & -34 \\\\ -13 & -24 & -15 \\\\ -16 & -13 & -27 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 9,
+    text: 'إذا كان: \\(A = \\begin{bmatrix} 4 & -2 \\\\ -3 & 10 \\end{bmatrix}\\) ، \\(B = \\begin{bmatrix} 4 & -1 & -5 \\\\ 3 & 2 & 8 \\end{bmatrix}\\) ، فإن ناتج \\(B + 1.5B\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 6 & -1.5 & -7.5 \\\\ 4.5 & 3 & 12 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 10 & -2.5 & -12.5 \\\\ 7.5 & 5 & 20 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 10 & -3.5 & -10.5 \\\\ 14.5 & 3 & 12 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 10 & -2.5 & -12.5 \\\\ 2.5 & 5 & 22 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 10,
+    text: 'إذا كان: \\(A = \\begin{bmatrix} 4 & -2 \\\\ -3 & 10 \\end{bmatrix}\\) ، \\(C = \\begin{bmatrix} 3 & 2 \\\\ 0 & -9 \\end{bmatrix}\\) ، فإن ناتج \\(2C - 3A\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 6 & 4 \\\\ 0 & -18 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 12 & -6 \\\\ -9 & 30 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} -12 & 6 \\\\ 9 & -30 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -6 & 10 \\\\ 9 & -48 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 11,
+    text: 'جد قيمة كل من \\(x, y\\) التي تحقق المعادلة الآتية: \\(2\\begin{bmatrix} x & 3 \\\\ 6 & y \\end{bmatrix} = 3\\begin{bmatrix} x & 6 \\\\ 4 & -2 \\end{bmatrix} - 4\\begin{bmatrix} 4 & 3 \\\\ 0 & x \\end{bmatrix}\\)',
+    choices: {
+      a: '\\(x = -35,\\ y = 16\\)',
+      b: '\\(x = -16,\\ y = 35\\)',
+      c: '\\(x = 16,\\ y = -35\\)',
+      d: '\\(x = -35,\\ y = -16\\)'
+    }
+  },
+  {
+    id: 12,
+    text: 'اكتب مصفوفتين \\(A, B\\) بحيث يكون: \\(3A + 2B = \\begin{bmatrix} 12 & 8 \\\\ 6 & -5 \\end{bmatrix}\\)',
+    choices: {
+      a: '\\(A = \\begin{bmatrix} 4 & 2 \\\\ 1 & -4 \\end{bmatrix}, B = \\begin{bmatrix} 0 & 1 \\\\ 1.5 & 3.5 \\end{bmatrix}\\)',
+      b: '\\(A = \\begin{bmatrix} 2 & -2 \\\\ 1 & -4 \\end{bmatrix}, B = \\begin{bmatrix} 3 & 1 \\\\ 1 & 3 \\end{bmatrix}\\)',
+      c: '\\(A = \\begin{bmatrix} 4 & -4 \\\\ 1 & 2 \\end{bmatrix}, B = \\begin{bmatrix} 0 & 1 \\\\ 3.5 & 1.5 \\end{bmatrix}\\)',
+      d: '\\(A = \\begin{bmatrix} 2 & 2 \\\\ 1 & 4 \\end{bmatrix}, B = \\begin{bmatrix} 3 & 1 \\\\ 1.5 & 3.5 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 13,
+    text: 'إذا كانت المعادلة \\(2X - 3 = \\begin{bmatrix} 7 \\\\ -5 \\end{bmatrix}\\) ، فإن المصفوفة \\(X\\) التي تحقق المعادلة هي:',
+    choices: {
+      a: '\\(\\begin{bmatrix} \\frac{5}{2} \\\\ -\\frac{1}{2} \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 5 \\\\ -1 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} -5 \\\\ 1 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 5 \\\\ 1 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 14,
+    text: 'إذا كانت \\(3\\begin{bmatrix} 2 & -1 \\\\ 4 & 5 \\end{bmatrix} - 2B = \\begin{bmatrix} 3 & 5 \\\\ -2 & 1 \\end{bmatrix}\\) ، فجد المصفوفة \\(B\\):',
+    choices: {
+      a: '\\(\\begin{bmatrix} 1.5 & -4 \\\\ 7 & 7 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 1.5 & -4 \\\\ 7 & -7 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 4 & 1.5 \\\\ -7 & 7 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -1.5 & -4 \\\\ 7 & 7 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 15,
+    text: 'إذا كانت: \\(\\begin{bmatrix} x & y \\\\ -y & x \\end{bmatrix} - \\begin{bmatrix} y & x \\\\ x & -y \\end{bmatrix} = \\begin{bmatrix} 4 & -4 \\\\ -6 & 6 \\end{bmatrix}\\) ، فجد قيمة كل من \\(x\\) و \\(y\\):',
+    choices: {
+      a: '\\(x = 5,\\ y = -1\\)',
+      b: '\\(x = 5,\\ y = 1\\)',
+      c: '\\(x = -1,\\ y = 5\\)',
+      d: '\\(x = 1,\\ y = -5\\)'
+    }
+  },
+  {
+    id: 16,
+    text: 'إذا كانت \\(\\begin{bmatrix} b & 11 \\\\ -4 & 12 \\end{bmatrix} + \\begin{bmatrix} 3 & a \\\\ -2 & -8 \\end{bmatrix} = \\begin{bmatrix} 9 & 3b \\\\ -6 & 4 \\end{bmatrix}\\) ، فإن قيمة \\(a, b\\):',
+    choices: {
+      a: '\\(a = 6,\\ b = 7\\)',
+      b: '\\(a = 7,\\ b = -6\\)',
+      c: '\\(a = -6,\\ b = -7\\)',
+      d: '\\(a = 7,\\ b = 6\\)'
+    }
+  },
+  {
+    id: 17,
+    text: 'إذا كانت \\(A_{3 \\times 2}\\) ، وكانت \\(B_{2 \\times 4}\\) ، وكانت \\(C_{3 \\times 2}\\) فإن العملية التي يمكن إيجادها هي:',
+    choices: {
+      a: '\\(A + C\\)', b: '\\(A + B\\)', c: '\\(B - C\\)', d: '\\(B - A\\)'
+    }
+  },
+  {
+    id: 18,
+    text: 'إذا كانت: \\(\\begin{bmatrix} 4 & x \\\\ 7 & 3 \\end{bmatrix} = \\begin{bmatrix} 2x - y & 2 \\\\ 4 & z \\end{bmatrix} + 3\\begin{bmatrix} 1 & 1 \\\\ 1 & x - z \\end{bmatrix}\\) ، فإن قيمة \\((x + y + z)\\) تساوي:',
+    choices: { a: '\\(10\\)', b: '\\(19\\)', c: '\\(21\\)', d: '\\(26\\)' }
+  },
+  {
+    id: 19,
+    text: 'إذا كانت \\(\\begin{bmatrix} -20 & -19 \\\\ 64 & 5 \\end{bmatrix} = 2\\begin{bmatrix} y & x \\\\ 12 & 5 \\end{bmatrix} - 5\\begin{bmatrix} 4 & 7 \\\\ -8 & 1 \\end{bmatrix}\\) ، فإن قيمة \\((y - x)\\) تساوي:',
+    choices: { a: '\\(-8\\)', b: '\\(8\\)', c: '\\(16\\)', d: '\\(-16\\)' }
+  }
+];
+
+// Answer key from the answer table at the end of الدرس الثاني in the PDF.
+const EXAM_ANSWER_KEY_BM_L2 = {
+  1: 'b', 2: 'c', 3: 'b', 4: 'c', 5: 'd', 6: 'a', 7: 'b', 8: 'c', 9: 'b', 10: 'd',
+  11: 'c', 12: 'a', 13: 'b', 14: 'a', 15: 'b', 16: 'd', 17: 'a', 18: 'd', 19: 'a'
+};
+
+/* =========================================================================
+   بنك أسئلة اختبار الدرس الثالث: ضرب المصفوفات
+   رياضيات الأعمال — جيل 2009
+   -------------------------------------------------------------------------
+   Transcribed exactly from the teacher's PDF (ورقة عمل — الدرس الثالث).
+   NOTE ON NUMBERING: the PDF prints the number "6" twice (on two different
+   questions) and skips "7". The lesson's answer table has 21 entries, and
+   the second "6" lines up with key position 7 (its highlighted answer d
+   matches key #7 = d). Questions are therefore numbered 1..21 here so the
+   count and the answer table agree; no question was added, removed, or
+   reordered.
+   ========================================================================= */
+const EXAM_QUESTIONS_BM_L3 = [
+  {
+    id: 1,
+    text: 'إذا كانت: \\(A_{3 \\times 2}\\)، وكانت \\(B_{2 \\times 4}\\)، وكانت \\(C_{3 \\times 2}\\)، فإنَّ العملية التي يُمكِن إيجادها هي:',
+    choices: {
+      a: '\\(A + B\\)', b: '\\(B + C\\)', c: '\\(5B - 3C\\)', d: '\\((A + C)B\\)'
+    }
+  },
+  {
+    id: 2,
+    text: 'إذا كانت: \\(C = \\begin{bmatrix} -2 & 4 \\\\ 6 & -3 \\\\ 8 & 5 \\end{bmatrix} \\times \\begin{bmatrix} 1 & 4 & 5 \\\\ 9 & -2 & -3 \\end{bmatrix}\\) ، فإنَّ قيمة العنصر \\(C_{23}\\) تساوي:',
+    choices: { a: '\\(39\\)', b: '\\(22\\)', c: '\\(25\\)', d: '\\(27\\)' }
+  },
+  {
+    id: 3,
+    text: 'إذا كانت \\(L_{3 \\times 4}\\)، وكانت \\(M_{5 \\times 3}\\)، وكانت \\(N_{2 \\times 5}\\)، فإنَّ رتبة المصفوفة \\(T\\)، حيث: \\(T = NML\\)، هي:',
+    choices: { a: '\\(2 \\times 3\\)', b: '\\(3 \\times 5\\)', c: '\\(3 \\times 4\\)', d: '\\(2 \\times 4\\)' }
+  },
+  {
+    id: 4,
+    text: 'إذا كانت \\(A_{2 \\times 3}\\) ، وكانت \\(B_{2 \\times 2}\\) ، وكانت \\(C_{3 \\times 2}\\) ، فإن رتبة المصفوفة \\(D\\) ، حيث \\(D = ACB\\) هي:',
+    choices: { a: '\\(2 \\times 3\\)', b: '\\(2 \\times 2\\)', c: '\\(3 \\times 2\\)', d: '\\(3 \\times 3\\)' }
+  },
+  {
+    id: 5,
+    text: 'إذا كانت \\(L_{3 \\times 4}\\) ، وكانت \\(C_{4 \\times 5}\\) ، فإن رتبة المصفوفة \\(B\\) حيث \\(B = LC\\) هي:',
+    choices: { a: '\\(3 \\times 4\\)', b: '\\(3 \\times 3\\)', c: '\\(3 \\times 5\\)', d: '\\(5 \\times 3\\)' }
+  },
+  {
+    id: 6,
+    text: 'إذا كان: \\(M = \\begin{bmatrix} 3 & -1 \\\\ 2 & 5 \\end{bmatrix}\\) ، وكان: \\(N = \\begin{bmatrix} 4 & 0 \\\\ 6 & -3 \\end{bmatrix}\\) ، فجد \\(MN\\):',
+    choices: {
+      a: '\\(\\begin{bmatrix} 6 & 3 \\\\ 38 & -15 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 6 & 3 \\\\ -38 & 15 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 3 & 6 \\\\ -15 & 38 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 3 & -6 \\\\ 15 & 38 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 7,
+    text: 'إذا كان: \\(M = \\begin{bmatrix} 5 & 4 \\\\ 6 & 3 \\\\ 4 & 5 \\end{bmatrix}, N = \\begin{bmatrix} 3 \\\\ 1 \\end{bmatrix}\\) ، فجد \\(MN\\):',
+    choices: {
+      a: '\\(\\begin{bmatrix} 20 \\\\ 21 \\\\ 17 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 19 \\\\ 17 \\\\ 21 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 21 \\\\ 19 \\\\ 17 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 19 \\\\ 21 \\\\ 17 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 8,
+    text: 'إذا كانت رتبة المصفوفة \\(A\\) هي: \\(2 \\times 3\\) ، ورتبة المصفوفة \\(B\\) هي: \\(3 \\times 4\\) ، وكانت: \\(C = B \\times A\\) ، فإن رتبة المصفوفة \\(C\\) هي:',
+    choices: { a: '\\(2 \\times 4\\)', b: '\\(2 \\times 3\\)', c: '\\(4 \\times 2\\)', d: '\\(3 \\times 3\\)' }
+  },
+  {
+    id: 9,
+    text: 'ناتج \\(\\left( \\begin{bmatrix} 0 & 1 \\\\ 2 & 0 \\end{bmatrix} \\right)^2\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 2 & 0 \\\\ 0 & 2 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 0 & 1 \\\\ 4 & 0 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 0 & 2 \\\\ 1 & 0 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 0 & 1 \\\\ 2 & 0 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 10,
+    text: 'إذا كان: \\(P = \\begin{bmatrix} 2 & 0 \\\\ 1 & -1 \\end{bmatrix}\\) ، \\(Q = \\begin{bmatrix} 3 & 4 \\\\ 1 & 2 \\end{bmatrix}\\) ، \\(R = \\begin{bmatrix} 0 & -2 \\\\ 4 & 1 \\end{bmatrix}\\) وكان: \\(K = 3\\) ، فأجب عن الفقرات \\(\\{10, 11, 12\\}\\): &nbsp; \\(P(Q + R)\\)',
+    choices: {
+      a: '\\(\\begin{bmatrix} 4 & 4 \\\\ -2 & -1 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 6 & 4 \\\\ -2 & 1 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 6 & 4 \\\\ 2 & 1 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 6 & 4 \\\\ -2 & -1 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 11,
+    text: '\\(K(PQ)\\):',
+    choices: {
+      a: '\\(\\begin{bmatrix} 18 & 24 \\\\ 6 & 6 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 18 & 42 \\\\ 6 & 6 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 18 & 24 \\\\ -6 & 6 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -18 & 24 \\\\ 6 & -6 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 12,
+    text: '\\((PQ)R\\)',
+    choices: {
+      a: '\\(\\begin{bmatrix} 32 & 4 \\\\ 8 & -2 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 32 & 4 \\\\ -8 & -4 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 32 & -4 \\\\ 8 & -2 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -4 & 32 \\\\ 8 & -2 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 13,
+    text: 'ناتج: \\(\\begin{bmatrix} 2 \\\\ 5 \\end{bmatrix} \\times \\begin{bmatrix} -1 & 4 \\end{bmatrix}\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} -2 & -8 \\\\ -5 & 20 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} -2 & 8 \\\\ -5 & 20 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 8 & -2 \\\\ 20 & 5 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -2 & 8 \\\\ 5 & 20 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 14,
+    text: 'ناتج: \\(\\begin{bmatrix} 8 & 10 & -7 \\end{bmatrix} \\times \\begin{bmatrix} 1 \\\\ -3 \\\\ -5 \\end{bmatrix}\\) هو:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 13 & 0 & 1 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 13 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 13 \\\\ 0 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -13 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 15,
+    text: 'إذا كان: \\(A = \\begin{bmatrix} 2 & 0 \\\\ x & 3 \\end{bmatrix}\\) ، \\(B = \\begin{bmatrix} -2 & 0 \\\\ y & 4 \\end{bmatrix}\\) ، فإن \\(AB\\) بدلالة \\(x, y\\) هي:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 4 & 0 \\\\ -2x + 3y & 12 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} -4 & 0 \\\\ 2x + 3y & 12 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} -4 & 0 \\\\ 2y + 4x & 12 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} -4 & 0 \\\\ -2x + 3y & 12 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 16,
+    text: 'إذا علمت أن: \\(AB = \\begin{bmatrix} -4 & 0 \\\\ -2x + 3y & 12 \\end{bmatrix}\\) ، وكان: \\(BA = \\begin{bmatrix} -4 & 0 \\\\ 2y + 4x & 12 \\end{bmatrix}\\) ، فإن أصغر قيمة صحيحة موجبة لكل من \\(x, y\\) هي:',
+    choices: {
+      a: '\\(x = 6,\\ y = 1\\)', b: '\\(x = 2,\\ y = 6\\)',
+      c: '\\(x = 1,\\ y = 6\\)', d: '\\(x = 3,\\ y = 6\\)'
+    }
+  },
+  {
+    id: 17,
+    text: 'إذا كانت \\(A = \\begin{bmatrix} 12 & 4 \\\\ 9 & 3 \\end{bmatrix}\\) ، \\(B = \\begin{bmatrix} 4 & 6 \\\\ 0 & 1 \\end{bmatrix}\\) ، \\(C = \\begin{bmatrix} 5 & 8 \\\\ -3 & -5 \\end{bmatrix}\\) ، فإن أيّاً من العلاقات الآتية صحيحة:',
+    choices: {
+      a: '\\(AB = AC\\)', b: '\\(BA = CA\\)', c: '\\(AC = CB\\)', d: '\\(AB = BC\\)'
+    }
+  },
+  {
+    id: 18,
+    text: 'إذا كانت \\(B = \\begin{bmatrix} 1 & 0 \\\\ \\sqrt{3} & -1 \\end{bmatrix}\\) فإن \\(B^2\\) تساوي:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 0 & -1 \\\\ 0 & 0 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 0 & 1 \\\\ -1 & 0 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 19,
+    text: 'إذا كانت \\(B = \\begin{bmatrix} 0 & 0 \\\\ \\sqrt{3} & -1 \\end{bmatrix}\\) ، فإن \\(B^3\\) تساوي:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} 1 & 0 \\\\ \\sqrt{3} & 1 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} 1 & 1 \\\\ \\sqrt{3} & -1 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 1 & 0 \\\\ \\sqrt{3} & -1 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 20,
+    text: 'إذا كانت \\(\\begin{bmatrix} 1 & 3 \\\\ x & 2 \\end{bmatrix} \\times \\begin{bmatrix} y & -1 \\\\ 3 & -2 \\end{bmatrix} = \\begin{bmatrix} 7 & -7 \\\\ 8 & -3 \\end{bmatrix}\\) فإن قيمة كل من \\(x\\) و \\(y\\) هي:',
+    choices: {
+      a: '\\(x = 1, y = -2\\)', b: '\\(x = -1, y = -2\\)',
+      c: '\\(x = 1, y = 2\\)', d: '\\(x = -1, y = 2\\)'
+    }
+  },
+  {
+    id: 21,
+    text: 'إذا كانت \\(B = \\begin{bmatrix} 5 & 3 & -2 \\\\ -4 & 1 & 7 \\end{bmatrix}\\) ، \\(D = \\begin{bmatrix} -3 \\\\ 0 \\\\ -1 \\end{bmatrix}\\) ، فإن \\(BD\\) تساوي:',
+    choices: {
+      a: '\\(\\begin{bmatrix} 13 \\\\ -5 \\end{bmatrix}\\)',
+      b: '\\(\\begin{bmatrix} -5 \\\\ 13 \\end{bmatrix}\\)',
+      c: '\\(\\begin{bmatrix} -13 \\\\ 5 \\end{bmatrix}\\)',
+      d: '\\(\\begin{bmatrix} 13 \\\\ 5 \\end{bmatrix}\\)'
+    }
+  }
+];
+
+// Answer key from the answer table at the end of الدرس الثالث in the PDF.
+const EXAM_ANSWER_KEY_BM_L3 = {
+  1: 'd', 2: 'b', 3: 'd', 4: 'b', 5: 'c', 6: 'a', 7: 'd', 8: 'c', 9: 'a', 10: 'd',
+  11: 'a', 12: 'c', 13: 'b', 14: 'b', 15: 'd', 16: 'c', 17: 'a', 18: 'c', 19: 'd',
+  20: 'd', 21: 'd'
+};
+
+/* =========================================================================
+   بنك أسئلة اختبار الدرس الرابع: المُحددات وقاعدة كريمر
+   رياضيات الأعمال — جيل 2009
+   -------------------------------------------------------------------------
+   Transcribed exactly from the teacher's PDF (ورقة عمل — الدرس الرابع).
+   13 questions. Same duplicate-"6" numbering quirk as الدرس الثالث: the PDF
+   prints "6" on two questions and skips "7"; the answer table has 13
+   entries and the second "6" lines up with key position 7 (highlighted
+   answer c matches key #7 = c). Numbered 1..13 here to match the table.
+   Questions 6 and 7 carry the two original coordinate-plane figures,
+   cropped directly from the PDF (assets/exam-bm-l4/).
+   ========================================================================= */
+const EXAM_QUESTIONS_BM_L4 = [
+  {
+    id: 1,
+    text: 'إذا كان: \\(\\begin{vmatrix} 0 & -3 \\\\ 1 & 4 \\end{vmatrix}\\) ، فجد قيمة المحددة الآتية:',
+    choices: { a: '\\(28\\)', b: '\\(38\\)', c: '\\(-28\\)', d: '\\(-38\\)' }
+  },
+  {
+    id: 2,
+    text: 'إذا كان: \\(\\begin{vmatrix} -4 & 3 & 6 \\\\ 6 & 5 & 1 \\\\ 1 & 6 & 3 \\end{vmatrix}\\) ، فجد قيمة المحددة الآتية:',
+    choices: { a: '\\(201\\)', b: '\\(-99\\)', c: '\\(-201\\)', d: '\\(99\\)' }
+  },
+  {
+    id: 3,
+    text: 'إذا كان: \\(A = \\begin{bmatrix} a - 3 & -2 \\\\ 2 & a + 2 \\end{bmatrix}\\) ، حيث \\(a\\) عدد ثابت ، فجد محددة \\(A\\) بدلالة \\(a\\):',
+    choices: {
+      a: '\\(a^2 - 2\\)', b: '\\(a^2 - a - 2\\)',
+      c: '\\(a^2 + 2a + 2\\)', d: '\\(a^2 + 2a - 2\\)'
+    }
+  },
+  {
+    id: 4,
+    text: 'إذا كان: \\(A = \\begin{bmatrix} a - 3 & -2 \\\\ 2 & a + 2 \\end{bmatrix}\\) ، حيث \\(a\\) عدد ثابت ، فجد قيم \\(a\\) التي تجعل \\(|A| = 0\\):',
+    choices: { a: '\\(-2, -1\\)', b: '\\(1, -2\\)', c: '\\(2, -1\\)', d: '\\(2, 1\\)' }
+  },
+  {
+    id: 5,
+    text: 'المقدار الذي قيمته تساوي مساحة المثلث الذي رؤوسه \\(A(3, 5)\\) ، \\(B(0, 1)\\) ، \\(C(7, 0)\\) مما يأتي هو:',
+    choices: {
+      a: '\\(\\frac{1}{2}\\begin{vmatrix} 7 & 0 & 1 \\\\ 3 & 5 & 1 \\\\ 0 & 1 & 1 \\end{vmatrix}\\)',
+      b: '\\(\\frac{1}{2}\\begin{vmatrix} 7 & 5 & 1 \\\\ 0 & 0 & 1 \\\\ 3 & 1 & 1 \\end{vmatrix}\\)',
+      c: '\\(\\frac{1}{2}\\begin{vmatrix} 3 & 0 & 1 \\\\ 7 & 5 & 1 \\\\ 0 & 1 & 1 \\end{vmatrix}\\)',
+      d: '\\(\\frac{1}{2}\\begin{vmatrix} 7 & 1 & 1 \\\\ 0 & 5 & 1 \\\\ 3 & 0 & 1 \\end{vmatrix}\\)'
+    }
+  },
+  {
+    id: 6,
+    text: 'يظهر في المستوى الإحداثي المجاور مخطط لجزيرة على شكل مثلث. إذا كانت كل وحدة في المستوى الإحداثي تمثل \\(1Km\\) ، فأجد مساحة الجزيرة.',
+    image: 'assets/exam-bm-l4/q6-island.png',
+    choices: { a: '\\(162\\)', b: '\\(126\\)', c: '\\(166\\)', d: '\\(122\\)' }
+  },
+  {
+    id: 7,
+    text: 'يظهر في المستوى الإحداثي المجاور إحداثيات كلّ من مدينة الزرقاء، ومدينة الرمثا، ومدينة المفرق. إذا كانت كل وحدة في المستوى الإحداثي تُمَثّل \\(10Km\\) ، فأجد مساحة المنطقة التي رؤوسها هذه المدن الثلاث.',
+    image: 'assets/exam-bm-l4/q7-cities.png',
+    choices: { a: '\\(505\\)', b: '\\(605\\)', c: '\\(550\\)', d: '\\(500\\)' }
+  },
+  {
+    id: 8,
+    text: 'إذا كان \\(\\begin{cases} 2x - y = 4 \\\\ 3x + 2y = 0 \\end{cases}\\) نظاماً من المعادلات الخطية بمتغيرين، وكان \\(D = \\begin{vmatrix} 2 & -1 \\\\ 3 & 2 \\end{vmatrix}\\) ، فإن قيمة \\(x\\) باستعمال قاعدة كريمر هي:',
+    choices: {
+      a: '\\(x = \\frac{\\begin{vmatrix} 2 & -1 \\\\ 3 & 2 \\end{vmatrix}}{D}\\)',
+      b: '\\(x = \\frac{\\begin{vmatrix} 2 & 4 \\\\ 3 & 0 \\end{vmatrix}}{D}\\)',
+      c: '\\(x = \\frac{\\begin{vmatrix} -1 & 4 \\\\ 2 & 0 \\end{vmatrix}}{D}\\)',
+      d: '\\(x = \\frac{\\begin{vmatrix} 4 & -1 \\\\ 0 & 2 \\end{vmatrix}}{D}\\)'
+    }
+  },
+  {
+    id: 9,
+    text: 'إحدى المصفوفات الآتية هي مصفوفة مربعة من الرتبة \\(2 \\times 2\\) بشرط محددتها تساوي صفراً:',
+    choices: {
+      a: '\\(A = \\begin{bmatrix} 6 & 12 \\\\ 2 & -4 \\end{bmatrix}\\)',
+      b: '\\(A = \\begin{bmatrix} 6 & 12 \\\\ 2 & 4 \\end{bmatrix}\\)',
+      c: '\\(A = \\begin{bmatrix} 6 & 12 \\\\ -2 & 4 \\end{bmatrix}\\)',
+      d: '\\(A = \\begin{bmatrix} -6 & 12 \\\\ 2 & 4 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 10,
+    text: 'إحدى المصفوفات الآتية هي مصفوفة مربعة من الرتبة \\(2 \\times 2\\) بشرط محددتها تساوي \\((-1)\\):',
+    choices: {
+      a: '\\(A = \\begin{bmatrix} 7 & 5 \\\\ 4 & 3 \\end{bmatrix}\\)',
+      b: '\\(A = \\begin{bmatrix} 7 & 5 \\\\ 4 & -3 \\end{bmatrix}\\)',
+      c: '\\(A = \\begin{bmatrix} 5 & 3 \\\\ 7 & 4 \\end{bmatrix}\\)',
+      d: '\\(A = \\begin{bmatrix} 7 & -5 \\\\ 4 & 3 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 11,
+    text: 'إحدى المصفوفات الآتية هي مصفوفة مربعة من الرتبة \\(2 \\times 2\\) بشرط جميع عناصرها أعداد موجبة ومحددتها تساوي \\((-12)\\):',
+    choices: {
+      a: '\\(A = \\begin{bmatrix} 2 & 3 \\\\ 8 & 6 \\end{bmatrix}\\)',
+      b: '\\(A = \\begin{bmatrix} 3 & 2 \\\\ 6 & 8 \\end{bmatrix}\\)',
+      c: '\\(A = \\begin{bmatrix} -2 & 3 \\\\ 8 & 6 \\end{bmatrix}\\)',
+      d: '\\(A = \\begin{bmatrix} 2 & -3 \\\\ 6 & 8 \\end{bmatrix}\\)'
+    }
+  },
+  {
+    id: 12,
+    text: 'عند حلّ نظام من معادلتين بمُتغيّرين باستعمال قاعدة كريمر، فإنَّ الحلَّ هو: \\(x = \\frac{\\begin{vmatrix} 1 & 2 \\\\ 3 & 4 \\end{vmatrix}}{5}, y = \\frac{\\begin{vmatrix} 7 & a \\\\ b & c \\end{vmatrix}}{5}\\) ، ما قيمة كلٍّ من \\(a\\)، و\\(c\\)؟',
+    choices: {
+      a: '\\(a = 3, c = 1\\)', b: '\\(a = 1, c = 3\\)',
+      c: '\\(a = -1, c = 3\\)', d: '\\(a = 1, c = -3\\)'
+    }
+  },
+  {
+    id: 13,
+    text: 'عند حلّ نظام من معادلتين بمُتغيّرين باستعمال قاعدة كريمر، فإنَّ الحلَّ هو: \\(x = \\frac{\\begin{vmatrix} 1 & 2 \\\\ 3 & 4 \\end{vmatrix}}{5}, y = \\frac{\\begin{vmatrix} 7 & a \\\\ b & c \\end{vmatrix}}{5}\\) ، ما قيمة \\(b\\)؟',
+    choices: {
+      a: '\\(\\frac{21}{2}\\)', b: '\\(-\\frac{23}{2}\\)',
+      c: '\\(-\\frac{21}{2}\\)', d: '\\(\\frac{23}{2}\\)'
+    }
+  }
+];
+
+// Answer key from the answer table at the end of الدرس الرابع in the PDF.
+const EXAM_ANSWER_KEY_BM_L4 = {
+  1: 'a', 2: 'd', 3: 'b', 4: 'c', 5: 'a', 6: 'a', 7: 'c', 8: 'd', 9: 'b', 10: 'c',
+  11: 'a', 12: 'b', 13: 'd'
+};
+
 // A single exam registry — one entry per interactive exam in the site.
 // Each lesson item that should open an exam (instead of a plain resource
 // link) references one of these ids via { type: 'exam', examId: '...' }.
@@ -698,6 +1212,39 @@ const EXAM_REGISTRY = {
     // images combined into one continuous set.
     models: {
       'النموذج الأول': { from: 1, to: 19 }
+    }
+  },
+
+  'bm-l2': {
+    subject: 'رياضيات الأعمال',
+    unit: 'الوحدة (1) المصفوفات',
+    examName: 'الدرس (2): العمليات على المصفوفات',
+    questions: EXAM_QUESTIONS_BM_L2,
+    answerKey: EXAM_ANSWER_KEY_BM_L2,
+    models: {
+      'النموذج الأول': { from: 1, to: 19 }
+    }
+  },
+
+  'bm-l3': {
+    subject: 'رياضيات الأعمال',
+    unit: 'الوحدة (1) المصفوفات',
+    examName: 'الدرس (3): ضرب المصفوفات',
+    questions: EXAM_QUESTIONS_BM_L3,
+    answerKey: EXAM_ANSWER_KEY_BM_L3,
+    models: {
+      'النموذج الأول': { from: 1, to: 21 }
+    }
+  },
+
+  'bm-l4': {
+    subject: 'رياضيات الأعمال',
+    unit: 'الوحدة (1) المصفوفات',
+    examName: 'الدرس (4): المُحددات وقاعدة كريمر',
+    questions: EXAM_QUESTIONS_BM_L4,
+    answerKey: EXAM_ANSWER_KEY_BM_L4,
+    models: {
+      'النموذج الأول': { from: 1, to: 13 }
     }
   },
 
